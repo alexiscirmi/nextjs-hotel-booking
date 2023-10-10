@@ -27,7 +27,7 @@ export default function Navbar() {
         </ul>
 
         <div className='col-md-4 text-center'>
-          <Link href='/' className={`allison.className navbar-brand d-inline-flex link-body-emphasis text-decoration-none py-0 mx-0 ${styles.navbarBrand}`}>
+          <Link href='/' className={`${allison.className} navbar-brand d-inline-flex link-body-emphasis text-decoration-none py-0 mx-0 ${styles.navbarBrand}`}>
             Marcotel
           </Link>
         </div>

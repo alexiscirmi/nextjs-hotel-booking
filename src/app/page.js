@@ -1,5 +1,5 @@
-import Navbar from '../components/navbar/navbar'
-import Footer from '../components/footer/footer'
+import Navbar from '@/components/navbar/navbar'
+import Footer from '@/components/footer/footer'
 import Image from 'next/image'
 import styles from './page.module.scss'
 
