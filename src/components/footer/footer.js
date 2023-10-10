@@ -1,0 +1,39 @@
+import styles from './Footer.module.scss'
+
+export default function Footer() {
+  return (
+    <footer className={`py-3 border-top ${styles.footer}`}>
+
+      <div className={`container d-flex flex-wrap justify-content-between align-items-center border-top`}>
+
+        <div className='col-md-4 d-flex'>
+          <p className='text-body-secondary mb-0'>
+            <span className='pe-1'>SITIO DE FANTASÍA</span>
+            <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' className={`bi bi-c-circle ${styles.biCCircle}`} viewBox='0 0 16 16'>
+              <path d='M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8Zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0ZM8.146 4.992c-1.212 0-1.927.92-1.927 2.502v1.06c0 1.571.703 2.462 1.927 2.462.979 0 1.641-.586 1.729-1.418h1.295v.093c-.1 1.448-1.354 2.467-3.03 2.467-2.091 0-3.269-1.336-3.269-3.603V7.482c0-2.261 1.201-3.638 3.27-3.638 1.681 0 2.935 1.054 3.029 2.572v.088H9.875c-.088-.879-.768-1.512-1.729-1.512Z' />
+            </svg>
+            <a href='https://github.com/cirmialexis/' target='_blank' rel='noreferrer' className='nav-link-footer ps-1 text-body-secondary'>Alexis Cirmi</a>
+          </p>
+        </div>
+
+        <a href='#root' className='col-md-4 d-flex justify-content-center text-body-secondary text-decoration-none allison fs-1'>M</a>
+
+        <ul className='nav col-md-4 justify-content-end list-unstyled d-flex'>
+          <li className='ms-3'><a className='text-body-secondary' href='https://www.facebook.com' target='_blank' rel='noreferrer'>
+            <i className='bi bi-facebook fs-4' />
+          </a></li>
+
+          <li className='ms-3'><a className='text-body-secondary' href='https://www.instagram.com' target='_blank' rel='noreferrer'>
+            <i className='bi bi-instagram fs-4' />
+          </a></li>
+
+          <li className='ms-3'><a className='text-body-secondary' href='https://web.whatsapp.com/' target='_blank' rel='noreferrer'>
+            <i className='bi bi-whatsapp fs-4' />
+          </a></li>
+        </ul>
+
+      </div>
+
+    </footer>
+  )
+}

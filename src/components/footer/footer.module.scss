@@ -1,0 +1,11 @@
+@import '../../../public/scss/colors';
+
+.footer {
+  margin-top: auto;
+  background-color: $color2;
+}
+
+.biCCircle {
+  transform: rotate(180deg);
+  translate: 0 -10%;
+}

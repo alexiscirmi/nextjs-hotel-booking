@@ -1,0 +1,101 @@
+@import '/public/scss/_colors.scss';
+
+.section1 {
+  background-color: $color2;
+  height: 90vh;
+}
+
+.img {
+  width: auto;
+  height: auto;
+  max-width: 80vw;
+  border-radius: 10px;
+}
+
+.arrowDown {
+  color: $color5 !important;
+
+  @keyframes arrowDown {
+    0% {}
+
+    100% {
+      transform: translateY(20px);
+    }
+  }
+
+  & {
+    animation: arrowDown 1s;
+    animation-iteration-count: infinite;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.img,
+.description {
+  animation: fadeIn 1s;
+}
+
+@supports(animation-timeline: view()) {
+  @keyframes move {
+    to {
+      // Move horizontally so that right edge is aligned against the viewport
+      transform: translateX(calc(-100% + 100vw));
+      left: 0px;
+    }
+  }
+
+  .section2 {
+    background-color: $color5;
+
+    h2,
+    img {
+      max-width: 70vw;
+    }
+
+    img {
+      padding: 0 5vmax;
+    }
+
+    // Stretch it out, so that we create room for the horizontal scroll animation
+    height: 500vh;
+    overflow: visible; // To make position sticky work
+    view-timeline-name: --section-pin-tl;
+    view-timeline-axis: block;
+  }
+
+  .pinWrapSticky {
+    // Stick to Top
+    height: 100vh;
+    width: 100vw;
+    position: sticky;
+    top: 0;
+    width: 100vw;
+    overflow-x: hidden;
+  }
+
+  .pinWrap {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 50px 0;
+
+    height: 100vh;
+    width: 250vmax;
+    // Hook animation
+    will-change: transform;
+    animation: linear move forwards;
+    // Link animation to view-timeline
+    animation-timeline: --section-pin-tl;
+    animation-range: contain 0% contain 100%;
+  }
+}
