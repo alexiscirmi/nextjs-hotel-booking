@@ -22,7 +22,7 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="es">
-      <body className={montserrat.className}>
+      <body id='body' className={montserrat.className}>
         {children}
       </body>
     </html>

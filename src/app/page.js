@@ -14,10 +14,10 @@ export default function Home() {
           <div className='d-flex flex-column col-12 col-md-7 p-5 pt-sm-3 px-sm-2 pb-sm-2 p-md-0 justify-content-center'>
             <Image
               src={'/img/main1.webp'}
+              width={2000}
+              height={1333}
               className={`${styles.img} mx-auto mx-md-0`}
               alt='Hotel pool view'
-              height={1333}
-              width={2000}
             />
           </div>
           <div className='d-flex flex-column col-12 col-md-5 p-4 justify-content-center'>
@@ -35,18 +35,21 @@ export default function Home() {
               <Image
                 src={'/img/main1.webp'}
                 alt=''
-                height={1333}
-                width={2000} />
+                className={styles.img}
+                height={500}
+                width={750} />
               <Image
                 src={'/img/main1.webp'}
                 alt=''
-                height={1333}
-                width={2000} />
+                className={styles.img}
+                height={500}
+                width={750} />
               <Image
                 src={'/img/main1.webp'}
                 alt=''
-                height={1333}
-                width={2000} />
+                className={styles.img}
+                height={500}
+                width={750} />
             </div>
           </div>
         </section>

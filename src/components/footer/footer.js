@@ -19,7 +19,7 @@ export default function Footer() {
           </p>
         </div>
 
-        <a href='#root' className={`${allison.className} col-md-4 d-flex justify-content-center text-body-secondary text-decoration-none fs-1`}>M</a>
+        <a href='#body' className={`${allison.className} col-md-4 d-flex justify-content-center text-body-secondary text-decoration-none fs-1`}>M</a>
 
         <ul className='nav col-md-4 justify-content-end list-unstyled d-flex'>
           <li className='ms-3'><a className='text-body-secondary' href='https://www.facebook.com' target='_blank' rel='noreferrer'>
