@@ -11,7 +11,7 @@ const montserrat = Montserrat({ subsets: ['latin'], weight: ['200'] })
 const DynamicBootstrap = dynamic(
   () => require('../../public/bootstrap/bootstrap.bundle.min.js'),
   { ssr: false }
-);
+)
 
 export const metadata = {
   title: 'Marcotel',

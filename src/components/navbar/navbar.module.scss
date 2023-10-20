@@ -2,9 +2,13 @@
 
 .navbar {
   background-color: $color2;
-  height: 10vh;
+
+  &,
+  & * {
+    max-height: 10vh;
+  }
 }
 
 .navbarBrand {
-  font-size: 50px;
+  font-size: 40px;
 }

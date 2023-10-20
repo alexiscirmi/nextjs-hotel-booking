@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { Allison } from 'next/font/google'
-import styles from './Navbar.module.scss'
+import styles from './navbar.module.scss'
 
 const allison = Allison({ subsets: ['latin'], weight: ['400'] })
 
@@ -8,7 +8,7 @@ export default function Navbar() {
   return (
     <header className={`navbar navbar-expand-md border-bottom py-0 ${styles.navbar}`}>
 
-      <nav className='container-fluid d-flex align-items-center justify-content-around'>
+      <nav className='container-fluid justify-content-around'>
 
         <button className='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarToggler' aria-controls='navbarToggler' aria-expanded='false' aria-label='Toggle navigation'>
           <span className='navbar-toggler-icon'></span>
@@ -16,13 +16,13 @@ export default function Navbar() {
 
         <ul className='collapse navbar-collapse navbar-nav col-md-4 order-2 order-md-0 justify-content-center gap-4 gap-md-3 my-3 my-md-0' id='navbarToggler'>
           <li className='nav-item'>
-            <Link href='/' className='nav-link px-2 link-secondary'>Inicio</Link>
+            <Link href='/' className='nav-link px-2 link-secondary'>Start</Link>
           </li>
           <li className='nav-item'>
-            <Link href='/gallery' className='nav-link px-2 link-secondary'>Galería</Link>
+            <Link href='/gallery' className='nav-link px-2 link-secondary'>Gallery</Link>
           </li>
           <li className='nav-item'>
-            <Link href='/prices' className='nav-link px-2 link-secondary'>Precios</Link>
+            <Link href='/prices' className='nav-link px-2 link-secondary'>Prices</Link>
           </li>
         </ul>
 
@@ -33,7 +33,7 @@ export default function Navbar() {
         </div>
 
         <div className='col-md-4 text-center'>
-          <Link href='/login' type='button' className='btn btn-outline-secondary'>Ingresar</Link>
+          <Link href='/login' type='button' className='btn btn-outline-secondary'>Log in</Link>
         </div>
 
       </nav>
