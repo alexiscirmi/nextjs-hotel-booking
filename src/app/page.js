@@ -11,12 +11,13 @@ export default function Home() {
           <div className='container-fluid container-lg d-flex flex-md-row flex-column'>
             <div className='d-flex flex-column col-12 col-md-8 p-5 pt-sm-3 px-sm-2 pb-sm-2 p-md-0 justify-content-center align-items-center align-items-md-stretch '>
               <Image
-                src={'/img/main1.webp'}
+                src={'/img/index1.webp'}
                 alt='Hotel pool view'
-                className={`${styles.img} rounded `}
                 width={700}
                 height={467}
                 quality={75}
+                priority={true}
+                className={`${styles.img} rounded`}
               />
             </div>
             <div className='d-flex flex-column col-12 col-md-4 p-4 justify-content-center'>
@@ -33,20 +34,29 @@ export default function Home() {
             <div className={styles.pinWrap}>
               <h2 className='m-5 d-flex align-self-center balance'>Puerto Paraíso island is the ideal destination for you and your couple.</h2>
               <Image
-                src={'/img/main1.webp'}
-                alt=''
+                src={'/img/index2.webp'}
+                alt='Hotel pool view'
                 height={500}
-                width={750} />
+                width={750}
+                quality={75}
+                className={`${styles.img} rounded`}
+              />
               <Image
-                src={'/img/main1.webp'}
+                src={'/img/index1.webp'}
                 alt=''
                 height={500}
-                width={750} />
+                width={750}
+                quality={75}
+                className={`${styles.img} rounded`}
+              />
               <Image
-                src={'/img/main1.webp'}
+                src={'/img/index1.webp'}
                 alt=''
                 height={500}
-                width={750} />
+                width={750}
+                quality={75}
+                className={`${styles.img} rounded`}
+              />
             </div>
           </div>
         </section>

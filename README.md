@@ -37,4 +37,5 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 # Royalty-free images acknowledgments:
 
-mrsiraphol: https://www.freepik.com/free-photo/outdoor-blue-health-travel-leisure_1043784.htm
+mrsiraphol: https://www.freepik.com/author/mrsiraphol
+lifeforstock: https://www.freepik.com/author/lifeforstock
