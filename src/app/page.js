@@ -7,8 +7,6 @@ export default function Home() {
 
   return (
     <>
-      <Navbar />
-
       <main className={`text-center w-100 balance ${styles.main}`}>
 
         <section id='section1' className={`${styles.section1} d-flex`}>
@@ -56,9 +54,6 @@ export default function Home() {
         </section>
 
       </main >
-
-      <Footer />
-
     </>
   )
 }
