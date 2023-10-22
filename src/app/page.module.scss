@@ -56,7 +56,10 @@
   .section2 {
     background-color: $color5;
 
-    h2,
+    h2 {
+      max-width: 30vw;
+    }
+
     .img {
       max-width: 70vw;
     }
