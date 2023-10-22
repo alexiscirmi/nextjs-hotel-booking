@@ -4,11 +4,11 @@
   background-color: $color2;
 
   &,
-  & * {
-    max-height: 10vh;
+  &>* {
+    min-height: 10vh;
   }
 }
 
 .navbarBrand {
-  font-size: 40px;
+  font-size: 40px !important;
 }
