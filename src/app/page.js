@@ -34,28 +34,29 @@ export default function Home() {
             <div className={styles.pinWrap}>
               <h2 className='m-5 d-flex align-self-center balance'>Puerto Paraíso island is the ideal destination for you and your couple.</h2>
               <Image
+                src={'/img/index4.webp'}
+                alt='Hotel pool view'
+                height={500}
+                width={750}
+                quality={75}
+                priority={true}
+                className={`${styles.img}`}
+              />
+              <Image
+                src={'/img/index3.webp'}
+                alt='Hotel pool view'
+                height={500}
+                width={750}
+                quality={75}
+                className={`${styles.img}`}
+              />
+              <Image
                 src={'/img/index2.webp'}
                 alt='Hotel pool view'
                 height={500}
                 width={750}
                 quality={75}
-                className={`${styles.img} rounded`}
-              />
-              <Image
-                src={'/img/index1.webp'}
-                alt=''
-                height={500}
-                width={750}
-                quality={75}
-                className={`${styles.img} rounded`}
-              />
-              <Image
-                src={'/img/index1.webp'}
-                alt=''
-                height={500}
-                width={750}
-                quality={75}
-                className={`${styles.img} rounded`}
+                className={`${styles.img}`}
               />
             </div>
           </div>

@@ -16,9 +16,6 @@ export default function Navbar() {
 
         <ul className='collapse navbar-collapse navbar-nav col-md-4 order-2 order-md-0 justify-content-center gap-4 gap-md-3 my-3 my-md-0' id='navbarToggler'>
           <li className='nav-item'>
-            <Link href='/' className='nav-link px-2 link-secondary'>Start</Link>
-          </li>
-          <li className='nav-item'>
             <Link href='/gallery' className='nav-link px-2 link-secondary'>Gallery</Link>
           </li>
           <li className='nav-item'>
