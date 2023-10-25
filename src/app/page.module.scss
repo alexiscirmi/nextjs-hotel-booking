@@ -57,10 +57,12 @@
     background-color: $color5;
 
     h2 {
+      min-width: 200px;
       max-width: 30vw;
     }
 
     .img {
+      min-width: 400px;
       max-width: 70vw;
     }
 

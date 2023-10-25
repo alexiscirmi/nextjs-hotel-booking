@@ -10,7 +10,7 @@ export default function Home() {
 
         <section id='section1' className={`${styles.section1} d-flex`}>
           <div className='container-fluid container-lg d-flex flex-md-row flex-column'>
-            <div className='d-flex flex-column col-12 col-md-8 p-5 pt-sm-3 px-sm-2 pb-sm-2 p-md-0 justify-content-center align-items-center align-items-md-stretch '>
+            <div className='ss d-flex flex-column col-12 col-md-8 p-5 pt-sm-3 px-sm-2 pb-sm-2 p-md-0 justify-content-center align-items-center align-items-md-stretch'>
               <Image
                 src={'/img/index1.webp'}
                 alt='Hotel pool view'
