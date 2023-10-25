@@ -12,7 +12,7 @@ export default function Home() {
           <div className='container-fluid container-lg d-flex flex-md-row flex-column'>
             <div className='ss d-flex flex-column col-12 col-md-8 p-5 pt-sm-3 px-sm-2 pb-sm-2 p-md-0 justify-content-center align-items-center align-items-md-stretch'>
               <Image
-                src={'/img/index1.webp'}
+                src={'/img/index/index1.webp'}
                 alt='Hotel pool view'
                 width={700}
                 height={467}
@@ -35,7 +35,7 @@ export default function Home() {
             <div className={styles.pinWrap}>
               <h2 className='m-5 d-flex align-self-center balance'>Puerto Paraíso island is the ideal destination for you and your couple.</h2>
               <Image
-                src={'/img/index4.webp'}
+                src={'/img/index/index4.webp'}
                 alt='Hotel pool view'
                 height={500}
                 width={750}
@@ -44,7 +44,7 @@ export default function Home() {
                 className={`${styles.img}`}
               />
               <Image
-                src={'/img/index3.webp'}
+                src={'/img/index/index3.webp'}
                 alt='Hotel pool view'
                 height={500}
                 width={750}
@@ -52,7 +52,7 @@ export default function Home() {
                 className={`${styles.img}`}
               />
               <Image
-                src={'/img/index2.webp'}
+                src={'/img/index/index2.webp'}
                 alt='Hotel pool view'
                 height={500}
                 width={750}
