@@ -101,3 +101,18 @@
     animation-range: contain 0% contain 100%;
   }
 }
+
+.section3 {
+  background-color: $color4;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  background-image: url('../../public/img/index5.webp');
+  background-position: center;
+  background-size: cover;
+}
+
+.section3__div {
+  background-color: rgb(255, 255, 255, 0.3);
+  height: 100%;
+}

@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import styles from './page.module.scss'
 
 export default function Home() {
@@ -59,6 +60,12 @@ export default function Home() {
                 className={`${styles.img}`}
               />
             </div>
+          </div>
+        </section>
+
+        <section id='section3' className={`${styles.section3}`}>
+          <div className={`${styles.section3__div} container-fluid d-flex justify-content-center align-items-center`}>
+            <Link href='/gallery' className='fs-1 btn btn-secondary'>Take a look at our gallery</Link >
           </div>
         </section>
 
