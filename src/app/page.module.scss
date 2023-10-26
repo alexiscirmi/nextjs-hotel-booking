@@ -3,12 +3,22 @@
 .section1 {
   background-color: $color2;
   height: 90vh;
-}
 
-.img {
-  width: auto;
-  height: auto;
-  max-width: 80vw;
+  .img {
+    height: auto;
+    width: 100vw;
+    min-height: 50vh;
+    max-height: 65vh;
+    object-fit: cover;
+
+    @media (min-width: 768px) {
+      & {
+        height: 90vh;
+        width: auto;
+        max-height: none;
+      }
+    }
+  }
 }
 
 .arrowDown {
@@ -62,11 +72,10 @@
     }
 
     .img {
+      width: auto;
+      height: auto;
       min-width: 400px;
       max-width: 70vw;
-    }
-
-    .img {
       padding: 0 4vmax;
     }
 
