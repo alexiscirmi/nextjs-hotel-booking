@@ -1,4 +1,8 @@
 import Image from 'next/image'
+import index1 from '../../public/img/index/index1.webp'
+import index2 from '../../public/img/index/index2.webp'
+import index3 from '../../public/img/index/index3.webp'
+import index4 from '../../public/img/index/index4.webp'
 import Link from 'next/link'
 import styles from './page.module.scss'
 
@@ -12,7 +16,7 @@ export default function Home() {
           <div className='d-flex flex-md-row flex-column w-100'>
             <div className='d-flex flex-column col-12 col-md-8'>
               <Image
-                src={'/img/index/index1.webp'}
+                src={index1}
                 alt='Hotel pool view'
                 width={1000}
                 height={666}
@@ -35,7 +39,7 @@ export default function Home() {
             <div className={styles.pinWrap}>
               <h2 className='m-5 d-flex align-self-center balance'>Puerto Paraíso island is the ideal destination for you and your couple.</h2>
               <Image
-                src={'/img/index/index4.webp'}
+                src={index4}
                 alt='Hotel pool view'
                 height={500}
                 width={750}
@@ -44,7 +48,7 @@ export default function Home() {
                 className={`${styles.img}`}
               />
               <Image
-                src={'/img/index/index3.webp'}
+                src={index3}
                 alt='Hotel pool view'
                 height={500}
                 width={750}
@@ -52,7 +56,7 @@ export default function Home() {
                 className={`${styles.img}`}
               />
               <Image
-                src={'/img/index/index2.webp'}
+                src={index2}
                 alt='Hotel pool view'
                 height={500}
                 width={750}

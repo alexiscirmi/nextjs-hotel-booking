@@ -39,3 +39,4 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 mrsiraphol: https://www.freepik.com/author/mrsiraphol
 lifeforstock: https://www.freepik.com/author/lifeforstock
+freepik: https://www.freepik.com/author/freepik

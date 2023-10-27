@@ -1,4 +1,4 @@
-@import '/public/scss/_colors.scss';
+@import '../../public/scss/colors';
 
 .section1 {
   background-color: $color2;
@@ -54,6 +54,7 @@
   animation: fadeIn 1s;
 }
 
+// Part of the next code can be found on https://scroll-driven-animations.style/
 @supports(animation-timeline: view()) {
   @keyframes move {
     to {
