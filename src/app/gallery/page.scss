@@ -21,10 +21,19 @@
 
 /* Limit site of the images */
 .column__item-imgwrap {
-  margin-block-start: 1em;
-  margin-block-end: 1em;
-  margin-inline-start: 40px;
-  margin-inline-end: 40px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
+
+  @media (min-width: 768px) {
+    & {
+      margin-top: 15px;
+      margin-bottom: 15px;
+      margin-left: 30px;
+      margin-right: 30px;
+    }
+  }
 
   img {
     border-radius: 1em;
@@ -33,10 +42,6 @@
     aspect-ratio: 0.75;
     object-fit: cover;
   }
-}
-
-.column__item-caption {
-  text-align: center;
 }
 
 // The next code can be found on https://scroll-driven-animations.style/
