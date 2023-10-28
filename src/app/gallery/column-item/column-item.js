@@ -5,7 +5,7 @@ function ColumnItem({ src, alt }) {
     <div className='column__item-imgwrap'>
       <Image
         src={src}
-        alt={alt}
+        alt='Hotel pic'
         height={500}
         width={750}
         quality={75}
