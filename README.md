@@ -38,7 +38,11 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 # Royalty-free images acknowledgments:
 
 mrsiraphol: https://www.freepik.com/author/mrsiraphol
+
 lifeforstock: https://www.freepik.com/author/lifeforstock
+
 freepik: https://www.freepik.com/author/freepik
+
 Xavier Coiffic: https://unsplash.com/es/@xaviercoiffic
+
 Benjamin Voros: https://unsplash.com/es/@vorosbenisop
