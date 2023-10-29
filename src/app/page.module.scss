@@ -67,6 +67,12 @@
   .section2 {
     background-color: $color5;
 
+    // Stretch it out, so that we create room for the horizontal scroll animation
+    height: 500vh;
+    overflow: visible; // To make position sticky work
+    view-timeline-name: --section-pin-tl;
+    view-timeline-axis: block;
+
     h2 {
       min-width: 200px;
       max-width: 30vw;
@@ -75,16 +81,10 @@
     .img {
       width: auto;
       height: auto;
-      min-width: 400px;
-      max-width: 70vw;
+      max-width: 80vw;
+      max-height: 80vh;
       padding: 0 4vmax;
     }
-
-    // Stretch it out, so that we create room for the horizontal scroll animation
-    height: 500vh;
-    overflow: visible; // To make position sticky work
-    view-timeline-name: --section-pin-tl;
-    view-timeline-axis: block;
   }
 
   .pinWrapSticky {
