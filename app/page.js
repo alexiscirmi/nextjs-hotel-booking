@@ -37,7 +37,7 @@ export default function Home() {
         <section id='section2' className={styles.section2}>
           <div className={styles.pinWrapSticky}>
             <div className={styles.pinWrap}>
-              <h2 className='m-5 d-flex align-self-center balance'>Puerto Paraíso island is the ideal destination for you and your couple.</h2>
+              <h2 className='m-4 d-flex align-self-center balance'>Puerto Paraíso island is the ideal destination for you and your couple.</h2>
               <Image
                 src={index4}
                 alt='Hotel pool view'

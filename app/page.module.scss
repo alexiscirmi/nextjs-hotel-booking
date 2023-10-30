@@ -80,10 +80,9 @@
 
     .img {
       width: auto;
-      height: auto;
-      max-width: 80vw;
-      max-height: 80vh;
-      padding: 0 4vmax;
+      height: 80vh;
+      max-width: 100%;
+      object-fit: cover;
     }
   }
 
@@ -111,6 +110,11 @@
     // Link animation to view-timeline
     animation-timeline: --section-pin-tl;
     animation-range: contain 0% contain 100%;
+
+    &>* {
+      min-width: 60vmax;
+      padding: 0 5vmax;
+    }
   }
 }
 
