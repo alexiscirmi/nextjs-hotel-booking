@@ -1,8 +1,8 @@
 import Image from 'next/image'
-import index1 from '../../public/img/index/index1.webp'
-import index2 from '../../public/img/index/index2.webp'
-import index3 from '../../public/img/index/index3.webp'
-import index4 from '../../public/img/index/index4.webp'
+import index1 from '../public/img/index/index1.webp'
+import index2 from '../public/img/index/index2.webp'
+import index3 from '../public/img/index/index3.webp'
+import index4 from '../public/img/index/index4.webp'
 import Link from 'next/link'
 import styles from './page.module.scss'
 
