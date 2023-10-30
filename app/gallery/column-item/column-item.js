@@ -1,8 +1,9 @@
 import Image from 'next/image'
+import styles from './column-item.module.scss'
 
-function ColumnItem({ src, alt }) {
+function ColumnItem({ src }) {
   return (
-    <div className='column__item-imgwrap'>
+    <div className={styles.columnItemImgwrap}>
       <Image
         src={src}
         alt='Hotel pic'

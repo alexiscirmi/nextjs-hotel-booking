@@ -10,4 +10,20 @@
 .div {
   min-height: 75vh;
   backdrop-filter: blur(5px);
+
+  &>* {
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    & {
+      animation: fadeIn 1s;
+    }
+  }
 }
