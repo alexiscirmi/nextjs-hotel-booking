@@ -1,6 +1,6 @@
 import { Montserrat } from 'next/font/google'
-import Navbar from '@/app/navbar/navbar'
-import Footer from '@/app/footer/footer'
+import Navbar from '@/app/components/navbar/navbar'
+import Footer from '@/app/components/footer/footer'
 import Script from 'next/script'
 import '@/public/bootstrap.min.css'
 import './globals.scss'
