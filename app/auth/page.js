@@ -1,6 +1,6 @@
 import styles from './page.module.scss'
 
-export default function SignIn() {
+export default function AuthForm() {
   return (
     <main className={`${styles.main}`}>
       <div className={`d-flex justify-content-center align-items-center text-center form-signin m-auto  ${styles.div}`}>

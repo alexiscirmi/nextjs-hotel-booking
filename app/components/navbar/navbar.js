@@ -30,7 +30,7 @@ export default function Navbar() {
         </div>
 
         <div className='col-md-4 text-center'>
-          <Link href='/sign-in' type='button' className='btn btn-outline-secondary'>Sign in</Link>
+          <Link href='/auth' type='button' className='btn btn-outline-secondary'>Sign in</Link>
         </div>
 
       </nav>
