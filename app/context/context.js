@@ -6,7 +6,7 @@ export const Context = createContext()
 
 export function ContextProvider({ children }) {
 
-  const [signedIn, setSignedIn] = useState(JSON.parse(localStorage.getItem('signedIn')) || false)
+  const [signedIn, setSignedIn] = useState(JSON.parse(localStorage.getItem('signedIn')) || true)
 
   useEffect(() => {
     localStorage.setItem('signedIn', JSON.stringify(signedIn))

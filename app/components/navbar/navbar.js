@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import UserButton from './user-button/user-button'
 import { Allison } from 'next/font/google'
 import styles from './navbar.module.scss'
 
@@ -8,13 +9,13 @@ export default function Navbar() {
   return (
     <header className={`navbar navbar-expand-md border-bottom py-0 ${styles.navbar}`}>
 
-      <nav className='container-fluid justify-content-around'>
+      <nav className='container-fluid container-md justify-content-between'>
 
         <button className='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarToggler' aria-controls='navbarToggler' aria-expanded='false' aria-label='Toggle navigation'>
           <span className='navbar-toggler-icon'></span>
         </button>
 
-        <ul className='collapse navbar-collapse navbar-nav col-md-4 order-2 order-md-0 justify-content-center gap-4 gap-md-3 my-3 my-md-0' id='navbarToggler'>
+        <ul className='collapse navbar-collapse navbar-nav col-md-4 order-2 order-md-0 gap-4 gap-md-5 my-3 my-md-0' id='navbarToggler'>
           <li className='nav-item'>
             <Link href='/gallery' className='nav-link px-2 link-secondary'>Gallery</Link>
           </li>
@@ -29,8 +30,8 @@ export default function Navbar() {
           </Link>
         </div>
 
-        <div className='col-md-4 text-center'>
-          <Link href='/auth' type='button' className='btn btn-outline-secondary'>Sign in</Link>
+        <div className='col-md-4 text-end'>
+          <UserButton />
         </div>
 
       </nav>

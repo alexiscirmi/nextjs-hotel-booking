@@ -25,7 +25,7 @@ export default function SignIn({ handleCreateAccountClick }) {
           </div>
 
           <button className='btn btn-secondary w-100 my-2' type='submit'>Sign in</button>
-          <button className='btn btn-outline-secondary w-100' type='button' onClick={handleCreateAccountClick}>Create account</button>
+          <button className='btn btn-outline-secondary mt-4 w-100' type='button' onClick={handleCreateAccountClick}>Create account</button>
         </form>
       </div>
     </main>

@@ -13,13 +13,13 @@ export default function CreateAccount({ handleSignInClick }) {
           </div>
 
           <div className='form-floating mt-1'>
-            <input type='password' className='form-control' id='floatingPassword' placeholder='Password' autoComplete='current-password' required />
+            <input type='password' className='form-control' id='floatingPassword' placeholder='Password' autoComplete='current-password' minLength='8' required />
             <label htmlFor='floatingPassword'>Password</label>
           </div>
 
           <div className='form-floating mt-1'>
-            <input type='password' className='form-control' id='floatingPassword' placeholder='Password' autoComplete='current-password' required />
-            <label htmlFor='floatingPassword'>Password</label>
+            <input type='password' className='form-control' id='floatingPasswordConfirm' placeholder='Password' minLength='8' required />
+            <label htmlFor='floatingPasswordConfirm'>Password</label>
           </div>
 
           <div className='form-check text-start my-3'>
@@ -30,7 +30,7 @@ export default function CreateAccount({ handleSignInClick }) {
           </div>
 
           <button className='btn btn-secondary w-100 my-2' type='submit'>Create account</button>
-          <button className='btn btn-outline-secondary w-100' type='button' onClick={handleSignInClick}>Sign in</button>
+          <button className='btn btn-outline-secondary mt-4 w-100' type='button' onClick={handleSignInClick}>Sign in</button>
         </form>
       </div>
     </main>
