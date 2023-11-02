@@ -1,8 +1,8 @@
-@import '../../public/scss/colors';
+@import '../../../public/scss/colors';
 
 .main {
   min-height: 75vh;
-  background-image: url('../../public/img/sign-in/sign-in.webp');
+  background-image: url('../../../public/img/sign-in/sign-in.webp');
   background-position: center;
   background-size: cover;
 }
