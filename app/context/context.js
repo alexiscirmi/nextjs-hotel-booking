@@ -1,11 +1,20 @@
-import { createContext } from 'react'
+'use client'
 
-const context = createContext()
+import { createContext, useState, useEffect } from 'react'
 
-// function contextProvider {
-//   return (
-//     <div value={ }>
+export const Context = createContext()
 
-//     </div>
-//   )
-// }
+export function ContextProvider({ children }) {
+
+  const [signedIn, setSignedIn] = useState(JSON.parse(localStorage.getItem('signedIn')) || false)
+
+  useEffect(() => {
+    localStorage.setItem('signedIn', JSON.stringify(signedIn))
+  }, [signedIn])
+
+  return (
+    <Context.Provider value={{ signedIn }}>
+      {children}
+    </Context.Provider>
+  )
+}
