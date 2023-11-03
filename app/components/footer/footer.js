@@ -7,7 +7,7 @@ export default function Footer() {
   return (
     <footer className={`py-3 border-top ${styles.footer}`}>
 
-      <div className={`container d-flex flex-wrap justify-content-center align-items-center border-top`}>
+      <div className={`container d-flex flex-wrap justify-content-evenly align-items-center border-top`}>
 
         <div className='col-md-4 d-flex flex-column mt-1 text-center'>
           <p className='text-body-secondary mb-0'>
