@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import UserButton from './user-button/user-button'
+import UserButton from './user-button'
 import { Allison } from 'next/font/google'
 import styles from './navbar.module.scss'
 
