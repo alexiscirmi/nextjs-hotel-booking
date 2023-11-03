@@ -6,14 +6,14 @@ export const Context = createContext()
 
 export function ContextProvider({ children }) {
 
-  const [signedIn, setSignedIn] = useState(JSON.parse(localStorage.getItem('signedIn')) || true)
+  const [signedIn, setSignedIn] = useState(false)
 
   useEffect(() => {
-    localStorage.setItem('signedIn', JSON.stringify(signedIn))
-  }, [signedIn])
+    setSignedIn(localStorage.getItem('signedIn') || false)
+  }, [])
 
   return (
-    <Context.Provider value={{ signedIn }}>
+    <Context.Provider value={{ signedIn, setSignedIn }}>
       {children}
     </Context.Provider>
   )

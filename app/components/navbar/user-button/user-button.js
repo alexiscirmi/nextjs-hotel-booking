@@ -5,7 +5,12 @@ import { Context } from '@/app/context/context'
 import Link from 'next/link'
 
 export default function UserButton() {
-  const { signedIn } = useContext(Context)
+  const { signedIn, setSignedIn } = useContext(Context)
+
+  const handleSignOut = () => {
+    setSignedIn(false)
+    localStorage.clear()
+  }
 
   if (signedIn) {
     return (
@@ -14,7 +19,7 @@ export default function UserButton() {
           usuario
         </button>
         <ul className='dropdown-menu dropdown-menu-end'>
-          <li><a className='dropdown-item' href='#'>Sign out</a></li>
+          <li><button className='dropdown-item' onClick={handleSignOut}>Sign out</button></li>
         </ul>
       </div>
     )
