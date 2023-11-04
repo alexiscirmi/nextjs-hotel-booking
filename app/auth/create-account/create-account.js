@@ -18,7 +18,7 @@ export default function CreateAccount({ handleSignInClick }) {
           </div>
 
           <div className='form-floating mt-1'>
-            <input type='password' className='form-control' id='floatingPasswordConfirm' placeholder='Password' minLength='8' required />
+            <input type='password' className='form-control' id='floatingPasswordConfirm' placeholder='Password' autoComplete='new-password' minLength='8' required />
             <label htmlFor='floatingPasswordConfirm'>Password</label>
           </div>
 
