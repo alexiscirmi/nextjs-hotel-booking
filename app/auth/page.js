@@ -1,8 +1,9 @@
 'use client'
 
 import { useState } from 'react'
-import SignIn from './sign-in/sign-in'
-import CreateAccount from './create-account/create-account'
+import SignIn from './sign-in'
+import CreateAccount from './create-account'
+import styles from './page.module.scss'
 
 export default function AuthForm() {
 
@@ -16,13 +17,16 @@ export default function AuthForm() {
     setCreateAccount(false)
   }
 
-  if (createAccount) {
-    return (
-      <CreateAccount handleSignInClick={handleSignInClick} />
-    )
-  } else {
-    return (
-      <SignIn handleCreateAccountClick={handleCreateAccountClick} />
-    )
-  }
+  return (
+    <main className={styles.main}>
+      <div className={`d-flex justify-content-center align-items-center text-center form-signin m-auto  ${styles.div}`}>
+        <>
+          {createAccount
+            ? <CreateAccount handleSignInClick={handleSignInClick} />
+            : <SignIn handleCreateAccountClick={handleCreateAccountClick} />
+          }
+        </>
+      </div>
+    </main>
+  )
 }
