@@ -3,20 +3,26 @@
 import { useContext } from 'react'
 import { Context } from '@/app/context/context'
 import Link from 'next/link'
+import { signOut } from 'firebase/auth'
+import { auth } from '@/app/firebase/firebase'
 
 export default function UserButton() {
-  const { signedIn, setSignedIn } = useContext(Context)
+  const { session } = useContext(Context)
 
   const handleSignOut = () => {
-    setSignedIn(false)
-    localStorage.clear()
+    signOut(auth).then(() => {
+      // Sign-out successful.
+    }).catch((error) => {
+      // An error happened.
+      console.log(error)
+    });
   }
 
-  if (signedIn) {
+  if (session) {
     return (
       <div className='dropdown-center'>
         <button className='btn btn-secondary dropdown-toggle' type='button' data-bs-toggle='dropdown' aria-expanded='false'>
-          usuario
+          {session}
         </button>
         <ul className='dropdown-menu dropdown-menu-end'>
           <li><button className='dropdown-item' onClick={handleSignOut}>Sign out</button></li>
