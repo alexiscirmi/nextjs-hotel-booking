@@ -21,10 +21,11 @@ export default function UserButton() {
   if (session) {
     return (
       <div className='dropdown-center'>
-        <button className='btn btn-secondary dropdown-toggle' type='button' data-bs-toggle='dropdown' aria-expanded='false'>
+        <button className='btn btn-sm btn-secondary dropdown-toggle' type='button' data-bs-toggle='dropdown' aria-expanded='false'>
           {session}
         </button>
         <ul className='dropdown-menu dropdown-menu-end'>
+          <li><button className='dropdown-item' onClick={null}>Profile (not yet)</button></li>
           <li><button className='dropdown-item' onClick={handleSignOut}>Sign out</button></li>
         </ul>
       </div>
