@@ -24,9 +24,8 @@ export default function Profile() {
     setEdit(true)
   }
 
-  const Swal = require('sweetalert2')
-
   const handleDelete = () => {
+    const Swal = require('sweetalert2')
     Swal.fire({
       title: 'Are you sure?',
       text: 'You won\'t be able to revert this, but you can create a new account using the same email.',
@@ -48,7 +47,6 @@ export default function Profile() {
         }).catch((error) => {
           // An error ocurred
           console.log(error)
-          // ...
         });
 
       }

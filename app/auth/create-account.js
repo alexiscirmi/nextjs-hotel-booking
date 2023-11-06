@@ -19,23 +19,40 @@ export default function CreateAccount({ handleSignInClick }) {
       : console.error('Las contraseñas no coinciden.')
 
     await createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
+      .then(() => {
         // Signed in
         sendEmailVerification(auth.currentUser)
           .then(() => {
+
+            const Swal = require('sweetalert2')
+            Swal.fire({
+              icon: "success",
+              title: "Email verification sent.",
+              showConfirmButton: false,
+              timer: 1500
+            })
+
             // Email verification sent!
             console.log('Email verification sent!')
-            // ...
-          });
-        const user = userCredential.user
-        router.push('/', { scroll: false })
-        // ...
+          })
+
+        setTimeout(() => {
+          router.push('/', { scroll: false })
+        }, 2000)
+
       })
       .catch((error) => {
+
+        const Swal = require('sweetalert2')
+        Swal.fire({
+          icon: "error",
+          title: "Error",
+          text: "Make sure you don't have an account already."
+        });
+
         const errorCode = error.code
         const errorMessage = error.message
         console.log(errorCode, errorMessage)
-        // ..
       })
   }
 
@@ -58,15 +75,8 @@ export default function CreateAccount({ handleSignInClick }) {
         <label htmlFor='floatingPasswordConfirm'>Password</label>
       </div>
 
-      <div className='form-check text-start my-3'>
-        <input className='form-check-input' type='checkbox' value='remember-me' id='flexCheckDefault' defaultChecked disabled />
-        <label className='form-check-label' htmlFor='flexCheckDefault'>
-          Remember me
-        </label>
-      </div>
-
-      <button className='btn btn-secondary w-100 my-2' type='submit'>Create account</button>
-      <button className='btn btn-outline-secondary mt-4 w-100' type='button' onClick={handleSignInClick}>Sign in</button>
+      <button className='btn btn-secondary w-100 mt-4' type='submit'>Create account</button>
+      <button className='btn btn-outline-secondary mt-5 w-100' type='button' onClick={handleSignInClick}>Sign in</button>
     </form>
   )
 }
