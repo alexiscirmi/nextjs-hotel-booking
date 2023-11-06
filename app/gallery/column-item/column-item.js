@@ -7,8 +7,8 @@ function ColumnItem({ src }) {
       <Image
         src={src}
         alt='Hotel pic'
-        height={500}
-        width={750}
+        height={1000}
+        width={667}
         quality={75}
       />
     </div>

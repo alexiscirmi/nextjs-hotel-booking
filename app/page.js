@@ -17,8 +17,8 @@ export default function Home() {
             <Image
               src={index1}
               alt='Hotel pool view'
-              width={1000}
-              height={666}
+              width={2000}
+              height={1333}
               quality={75}
               priority={true}
               className={`${styles.img}`}
@@ -40,8 +40,8 @@ export default function Home() {
             <Image
               src={index4}
               alt='Hotel pool view'
-              height={500}
-              width={750}
+              width={2000}
+              height={1333}
               quality={75}
               priority={true}
               className={`${styles.img}`}
@@ -49,16 +49,16 @@ export default function Home() {
             <Image
               src={index3}
               alt='Hotel pool view'
-              height={500}
-              width={750}
+              width={2000}
+              height={1333}
               quality={75}
               className={`${styles.img}`}
             />
             <Image
               src={index2}
               alt='Hotel pool view'
-              height={500}
-              width={750}
+              width={2000}
+              height={1333}
               quality={75}
               className={`${styles.img}`}
             />
