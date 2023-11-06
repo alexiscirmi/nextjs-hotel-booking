@@ -56,7 +56,7 @@ export default function CreateAccount({ handleSignInClick }) {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className='container-fluid' onSubmit={handleSubmit}>
       <h1 className='fs-3 mb-3'>Create your account</h1>
 
       <div className='form-floating mb-1'>
@@ -74,8 +74,8 @@ export default function CreateAccount({ handleSignInClick }) {
         <label htmlFor='floatingPasswordConfirm'>Password</label>
       </div>
 
-      <button className='btn btn-secondary w-100 mt-4' type='submit'>Create account</button>
-      <button className='btn btn-outline-secondary mt-5 w-100' type='button' onClick={handleSignInClick}>Sign in</button>
+      <button className='btn btn-secondary mt-4' type='submit'>Create account</button>
+      <button className='btn btn-outline-secondary mt-5' type='button' onClick={handleSignInClick}>Sign in</button>
     </form>
   )
 }

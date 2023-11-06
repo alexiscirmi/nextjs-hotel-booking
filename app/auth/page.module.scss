@@ -12,6 +12,8 @@
   backdrop-filter: blur(5px);
 
   & form {
+    max-width: 250px;
+
     @keyframes fadeIn {
       0% {
         opacity: 0;
@@ -24,6 +26,10 @@
 
     & {
       animation: fadeIn 1s;
+    }
+
+    & button {
+      width: 100%;
     }
   }
 }
