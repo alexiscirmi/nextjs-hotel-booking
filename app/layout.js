@@ -21,8 +21,8 @@ export default function RootLayout({ children }) {
         <ContextProvider>
           <Navbar />
           {children}
+          <Footer />
         </ContextProvider>
-        <Footer />
         <Script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' />
       </body>
     </html>

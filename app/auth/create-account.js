@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { auth } from '@/app/firebase/firebase'
-import { createUserWithEmailAndPassword } from 'firebase/auth'
+import { createUserWithEmailAndPassword, sendEmailVerification } from 'firebase/auth'
 import { useRouter } from 'next/navigation'
 
 export default function CreateAccount({ handleSignInClick }) {
@@ -21,6 +21,12 @@ export default function CreateAccount({ handleSignInClick }) {
     await createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // Signed in
+        sendEmailVerification(auth.currentUser)
+          .then(() => {
+            // Email verification sent!
+            console.log('Email verification sent!')
+            // ...
+          });
         const user = userCredential.user
         router.push('/', { scroll: false })
         // ...

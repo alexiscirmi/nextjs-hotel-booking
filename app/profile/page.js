@@ -16,11 +16,17 @@ export default function Profile() {
     }
   }, [session])
 
-  if (session) {
+  if (session.emailVerified) {
     return (
       <main className={styles.main}>
         <div className='fs-2 mb-5'>Profile</div>
         <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure officiis rerum vitae. Cumque animi minus maiores. Mollitia incidunt laudantium voluptas illum, nobis earum quos nam omnis impedit, non, corporis veritatis!</div>
+      </main>
+    )
+  } if (session) {
+    return (
+      <main className={styles.main}>
+        <div className='fs-2 mb-5'>Please verify your email address to access your profile.</div>
       </main>
     )
   } else {

@@ -3,37 +3,21 @@
 import { useContext } from 'react'
 import { Context } from '@/app/context/context'
 import Link from 'next/link'
-import { signOut } from 'firebase/auth'
-import { auth } from '@/app/firebase/firebase'
-import Loader from '../loader/loader'
 
 export default function UserButton() {
-  const { session } = useContext(Context)
-
-  const handleSignOut = () => {
-    signOut(auth).then(() => {
-      // Sign-out successful.
-    }).catch((error) => {
-      // An error happened.
-      console.log(error)
-    });
-  }
+  const { session, handleSignOut } = useContext(Context)
 
   if (session) {
     return (
       <div className='dropdown-center'>
         <button className='btn btn-sm btn-secondary dropdown-toggle' type='button' data-bs-toggle='dropdown' aria-expanded='false'>
-          {session}
+          {session.email}
         </button>
         <ul className='dropdown-menu dropdown-menu-end'>
           <li><Link href='/profile' className='dropdown-item'>Profile</Link></li>
           <li><button className='dropdown-item' onClick={handleSignOut}>Sign out</button></li>
         </ul>
       </div>
-    )
-  } if (session === undefined) {
-    return (
-      <Loader className='me-3' />
     )
   } else {
     return (

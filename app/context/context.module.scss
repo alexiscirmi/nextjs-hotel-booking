@@ -1,0 +1,11 @@
+@import '../../public/scss/colors';
+
+.loader {
+  background-color: $color2;
+  display: flex;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100vh;
+}
