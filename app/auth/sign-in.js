@@ -18,6 +18,15 @@ export default function SignIn({ handleCreateAccountClick }) {
         router.push('/', { scroll: false })
       })
       .catch((error) => {
+
+        const Swal = require('sweetalert2')
+        Swal.fire({
+          icon: 'warning',
+          text: 'Make sure your credentials are correct.',
+          showConfirmButton: false,
+          timer: 1500
+        })
+
         const errorCode = error.code
         const errorMessage = error.message
         console.log(errorCode, errorMessage)
@@ -31,7 +40,7 @@ export default function SignIn({ handleCreateAccountClick }) {
         const Swal = require('sweetalert2')
         Swal.fire({
           icon: "success",
-          title: "If your account exists, password reset email has been sent.",
+          text: "If your account exists, password reset email has been sent.",
           showConfirmButton: false,
           timer: 2500
         })

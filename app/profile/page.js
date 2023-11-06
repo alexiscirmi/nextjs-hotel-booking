@@ -39,15 +39,16 @@ export default function Profile() {
         const user = auth.currentUser
         deleteUser(user).then(() => {
           // User deleted.
+
           Swal.fire({
-            title: 'Deleted!',
-            text: 'Your account has been deleted.',
-            icon: 'success'
+            icon: 'success',
+            text: 'Your account has been deleted.'
           })
+
         }).catch((error) => {
           // An error ocurred
           console.log(error)
-        });
+        })
 
       }
     })

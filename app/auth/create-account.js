@@ -26,8 +26,8 @@ export default function CreateAccount({ handleSignInClick }) {
 
             const Swal = require('sweetalert2')
             Swal.fire({
-              icon: "success",
-              title: "Email verification sent.",
+              icon: 'success',
+              text: 'Email verification sent.',
               showConfirmButton: false,
               timer: 1500
             })
@@ -45,10 +45,9 @@ export default function CreateAccount({ handleSignInClick }) {
 
         const Swal = require('sweetalert2')
         Swal.fire({
-          icon: "error",
-          title: "Error",
-          text: "Make sure you don't have an account already."
-        });
+          icon: 'error',
+          text: 'Make sure you don\'t have an account already.'
+        })
 
         const errorCode = error.code
         const errorMessage = error.message
