@@ -11,3 +11,37 @@
   text-align: center;
   text-wrap: balance;
 }
+
+.detail {
+  background-color: whitesmoke;
+  width: 90vw;
+  display: flex;
+  justify-content: space-between;
+
+  @media (min-width: 576px) {
+    & {
+      width: 70vw;
+    }
+  }
+
+  @media (min-width: 768px) {
+    & {
+      width: 60vw;
+    }
+  }
+
+  @media (min-width: 992px) {
+    & {
+      width: 50vw;
+    }
+  }
+
+  & .left {
+    background-color: $color3;
+    width: 30%;
+  }
+
+  & .right {
+    width: 70%;
+  }
+}
