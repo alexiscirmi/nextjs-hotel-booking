@@ -14,7 +14,7 @@ export default function Profile() {
     if (!session) {
       router.push('/', { scroll: false })
     }
-  }, [])
+  }, [session])
 
   if (session) {
     return (
