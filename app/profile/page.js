@@ -1,14 +1,22 @@
 'use client'
 
-import { auth } from '@/app/firebase/firebase'
+import { useEffect, useContext } from 'react'
+import { Context } from '@/app/context/context'
 import { useRouter } from 'next/navigation'
 import styles from './page.module.scss'
 
 export default function Profile() {
 
+  const { session } = useContext(Context)
   const router = useRouter()
 
-  if (auth.currentUser) {
+  useEffect(() => {
+    if (!session) {
+      router.push('/', { scroll: false })
+    }
+  }, [])
+
+  if (session) {
     return (
       <main className={styles.main}>
         <div className='fs-2 mb-5'>Profile</div>
@@ -16,7 +24,10 @@ export default function Profile() {
       </main>
     )
   } else {
-    router.push('/', { scroll: false })
+    return (
+      <main className={styles.main}>
+        <div className='fs-1'>Redirecting...</div>
+      </main>
+    )
   }
-
 }

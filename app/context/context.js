@@ -18,7 +18,7 @@ export function ContextProvider({ children }) {
       // ...
     } else {
       // User is signed out
-      setSession(undefined)
+      setSession(false)
       // ...
     }
   })

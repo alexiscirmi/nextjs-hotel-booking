@@ -5,6 +5,7 @@ import { Context } from '@/app/context/context'
 import Link from 'next/link'
 import { signOut } from 'firebase/auth'
 import { auth } from '@/app/firebase/firebase'
+import Loader from '../loader/loader'
 
 export default function UserButton() {
   const { session } = useContext(Context)
@@ -29,6 +30,10 @@ export default function UserButton() {
           <li><button className='dropdown-item' onClick={handleSignOut}>Sign out</button></li>
         </ul>
       </div>
+    )
+  } if (session === undefined) {
+    return (
+      <Loader className='me-3' />
     )
   } else {
     return (
