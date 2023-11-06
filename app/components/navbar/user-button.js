@@ -25,7 +25,7 @@ export default function UserButton() {
           {session}
         </button>
         <ul className='dropdown-menu dropdown-menu-end'>
-          <li><button className='dropdown-item' onClick={null}>Profile (not yet)</button></li>
+          <li><Link href='/profile' className='dropdown-item'>Profile</Link></li>
           <li><button className='dropdown-item' onClick={handleSignOut}>Sign out</button></li>
         </ul>
       </div>

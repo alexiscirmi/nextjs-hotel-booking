@@ -18,12 +18,10 @@ import './page.scss'
 
 export default function Gallery() {
   return (
-    <>
-      <div className='columns'>
-        <Column className={`column column-reverse`} src1={gallery1} src2={gallery2} src3={gallery3} src4={gallery4} src5={gallery13} />
-        <Column className={`column`} src1={gallery5} src2={gallery6} src3={gallery7} src4={gallery8} src5={gallery14} />
-        <Column className={`column column-reverse`} src1={gallery9} src2={gallery10} src3={gallery11} src4={gallery12} src5={gallery15} />
-      </div>
-    </>
+    <main className='columns'>
+      <Column className={`column column-reverse`} src1={gallery1} src2={gallery2} src3={gallery3} src4={gallery4} src5={gallery13} />
+      <Column className={`column`} src1={gallery5} src2={gallery6} src3={gallery7} src4={gallery8} src5={gallery14} />
+      <Column className={`column column-reverse`} src1={gallery9} src2={gallery10} src3={gallery11} src4={gallery12} src5={gallery15} />
+    </main>
   )
 }
