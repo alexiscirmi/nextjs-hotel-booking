@@ -6,9 +6,9 @@ const allison = Allison({ subsets: ['latin'], weight: ['400'] })
 
 export default function Footer() {
   return (
-    <footer data-bs-theme='dark' className={`py-3 border-top ${styles.footer}`}>
+    <footer data-bs-theme='dark' className={`py-3 ${styles.footer}`}>
 
-      <div className={`container d-flex flex-wrap justify-content-evenly align-items-center border-top`}>
+      <div className={`container d-flex flex-wrap justify-content-evenly align-items-center`}>
 
         <div className='col-md-4 d-flex flex-column mt-1 text-center'>
           <p className='mb-0'>
