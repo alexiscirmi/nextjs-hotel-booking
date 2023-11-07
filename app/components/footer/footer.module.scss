@@ -2,8 +2,12 @@
 
 .footer {
   margin-top: auto;
-  background-color: $color1;
+  background-color: $color5;
   height: 15vh;
+
+  & * {
+    color: whitesmoke;
+  }
 }
 
 .biCCircle {

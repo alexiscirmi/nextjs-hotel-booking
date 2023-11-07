@@ -10,7 +10,7 @@ export default function UserButton() {
   if (session) {
     return (
       <div className='dropdown-center'>
-        <button className='btn btn-sm btn-secondary dropdown-toggle' type='button' data-bs-toggle='dropdown' aria-expanded='false'>
+        <button className='btn btn-sm btn-light dropdown-toggle' type='button' data-bs-toggle='dropdown' aria-expanded='false'>
           {session.email.slice(0, (session.email.indexOf('@'))).length <= 15
             ? session.email.slice(0, (session.email.indexOf('@')))
             : `${session.email.slice(0, 10)}...`
@@ -25,7 +25,7 @@ export default function UserButton() {
   } else {
     return (
       <>
-        <Link href='/auth' type='button' className='btn btn-outline-secondary'>Sign in</Link>
+        <Link href='/auth' type='button' className='btn btn-outline-light'>Sign in</Link>
       </>
     )
   }

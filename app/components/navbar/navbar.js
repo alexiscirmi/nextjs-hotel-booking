@@ -7,9 +7,9 @@ const allison = Allison({ subsets: ['latin'], weight: ['400'] })
 
 export default function Navbar() {
   return (
-    <header className={`navbar navbar-expand-md border-bottom py-0 ${styles.navbar}`}>
+    <header className={`navbar navbar-expand-md py-0 ${styles.navbar}`}>
 
-      <nav className='container-fluid container-md justify-content-between'>
+      <nav data-bs-theme='dark' className='container-fluid container-md justify-content-between'>
 
         <button className='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarToggler' aria-controls='navbarToggler' aria-expanded='false' aria-label='Toggle navigation'>
           <span className='navbar-toggler-icon'></span>
@@ -17,10 +17,10 @@ export default function Navbar() {
 
         <ul className='collapse navbar-collapse navbar-nav col-md-4 order-2 order-md-0 gap-4 gap-md-5 my-3 my-md-0' id='navbarToggler'>
           <li className='nav-item'>
-            <Link href='/gallery' className='nav-link px-2 link-secondary'>Gallery</Link>
+            <Link href='/gallery' className='nav-link px-2 link-light'>Gallery</Link>
           </li>
           <li className='nav-item'>
-            <Link href='/prices' className='nav-link px-2 link-secondary'>Prices</Link>
+            <Link href='/prices' className='nav-link px-2 link-light'>Prices</Link>
           </li>
         </ul>
 

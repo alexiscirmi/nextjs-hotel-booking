@@ -1,7 +1,7 @@
 @import '../public/scss/colors';
 
 .section1 {
-  background-color: $color2;
+  background-color: $color1;
   height: 90vh;
 
   .img {
@@ -22,7 +22,7 @@
 }
 
 .arrowDown {
-  color: $color5 !important;
+  color: $color4;
 
   @keyframes arrowDown {
     0% {}
@@ -57,6 +57,7 @@
 .img,
 .description {
   animation: fadeIn 1s;
+  color: $color4;
 }
 
 // Part of the next code can be found on https://scroll-driven-animations.style/
@@ -70,7 +71,7 @@
   }
 
   .section2 {
-    background-color: $color5;
+    background-color: $color4;
 
     // Stretch it out, so that we create room for the horizontal scroll animation
     height: 500vh;
@@ -79,6 +80,7 @@
     view-timeline-axis: block;
 
     h2 {
+      color: $color1;
       min-width: 200px;
       max-width: 30vw;
     }
