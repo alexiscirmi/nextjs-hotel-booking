@@ -5,6 +5,7 @@ import index3 from '../public/img/index/index3.webp'
 import index4 from '../public/img/index/index4.webp'
 import Link from 'next/link'
 import styles from './page.module.scss'
+import { ArrowDownCircle } from 'react-bootstrap-icons'
 
 export default function Home() {
 
@@ -27,7 +28,7 @@ export default function Home() {
           <div className='d-flex flex-column col-12 col-md-4 p-4 justify-content-center'>
             <h1 className={`fs-3 mb-2 px-5 ${styles.description}`}>Enjoy the magic of Puerto Paraíso</h1>
             <a href='#section2' className={`${styles.arrowDown}`}>
-              <i className='bi bi-arrow-down-circle fs-1' />
+              <ArrowDownCircle className='fs-1' />
             </a>
           </div>
         </div>
