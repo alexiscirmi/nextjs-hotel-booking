@@ -1,9 +1,9 @@
 /* Limit site of the images */
 .columnItemImgwrap {
-  margin-top: 5px;
-  margin-bottom: 5px;
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 3px;
+  margin-right: 3px;
 
   @keyframes fadeIn {
     0% {
@@ -19,10 +19,37 @@
     animation: fadeIn 1s;
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 576px) {
     & {
       margin-top: 15px;
       margin-bottom: 15px;
+      margin-left: 5px;
+      margin-right: 5px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    & {
+      margin-top: 10px;
+      margin-bottom: 10px;
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+  }
+
+  @media (min-width: 992px) {
+    & {
+      margin-top: 15px;
+      margin-bottom: 15px;
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    & {
+      margin-top: 20px;
+      margin-bottom: 20px;
       margin-left: 30px;
       margin-right: 30px;
     }
