@@ -1,5 +1,5 @@
 import { auth } from '@/app/firebase/firebase'
-import { updateProfile, updateEmail } from 'firebase/auth'
+import { updateProfile, verifyBeforeUpdateEmail } from 'firebase/auth'
 
 export default function SaveButton({ session, name, email, setEdit }) {
 
@@ -14,13 +14,13 @@ export default function SaveButton({ session, name, email, setEdit }) {
         console.log(error)
       })
     } if (email !== session.email) {
-      updateEmail(auth.currentUser, email)
-        .then(() => {
-          // Email updated!
-        }).catch((error) => {
-          // An error occurred
-          console.log(error)
-        })
+      verifyBeforeUpdateEmail(auth.currentUser, email).then(() => {
+        // Email sent.
+        // User must click the email link before the email is updated.
+      }).catch((error) => {
+        // An error happened.
+        console.log(error)
+      })
     }
     setEdit(false)
     window.location.reload(false)

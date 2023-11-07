@@ -36,6 +36,11 @@
     animation: arrowDown 1s;
     animation-iteration-count: infinite;
   }
+
+  & * {
+    width: 48px;
+    height: 48px;
+  }
 }
 
 @keyframes fadeIn {

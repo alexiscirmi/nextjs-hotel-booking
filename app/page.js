@@ -28,7 +28,7 @@ export default function Home() {
           <div className='d-flex flex-column col-12 col-md-4 p-4 justify-content-center'>
             <h1 className={`fs-3 mb-2 px-5 ${styles.description}`}>Enjoy the magic of Puerto Paraíso</h1>
             <a href='#section2' className={`${styles.arrowDown}`}>
-              <ArrowDownCircle className='fs-1' />
+              <ArrowDownCircle />
             </a>
           </div>
         </div>
