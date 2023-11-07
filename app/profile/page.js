@@ -2,10 +2,13 @@
 
 import { useEffect, useContext, useState } from 'react'
 import { Context } from '@/app/context/context'
+import DeleteButton from './delete-button'
+import CancelButton from './cancel-button'
 import { useRouter } from 'next/navigation'
 import { auth } from '@/app/firebase/firebase'
-import { deleteUser } from 'firebase/auth'
 import styles from './page.module.scss'
+import EditButton from './edit-button'
+import SaveButton from './save-button'
 
 export default function Profile() {
 
@@ -18,60 +21,47 @@ export default function Profile() {
     }
   }, [session])
 
-  const { edit, setEdit } = useState(false)
+  const [edit, setEdit] = useState(false)
 
-  const handleEdit = () => {
-    setEdit(true)
+  const [name, setName] = useState(session.displayName)
+  const handleName = (e) => {
+    setName(e.target.value)
   }
 
-  const handleDelete = () => {
-    const Swal = require('sweetalert2')
-    Swal.fire({
-      title: 'Are you sure?',
-      text: 'You won\'t be able to revert this, but you can create a new account using the same email.',
-      icon: 'warning',
-      showCancelButton: true,
-      confirmButtonColor: '#dc3545',
-      cancelButtonColor: '#6c757d',
-      confirmButtonText: 'Delete'
-    }).then((result) => {
-      if (result.isConfirmed) {
-        const user = auth.currentUser
-        deleteUser(user).then(() => {
-          // User deleted.
-
-          Swal.fire({
-            icon: 'success',
-            text: 'Your account has been deleted.'
-          })
-
-        }).catch((error) => {
-          // An error ocurred
-          console.log(error)
-        })
-
-      }
-    })
+  const [email, setEmail] = useState(session.email)
+  const handleEmail = (e) => {
+    setEmail(e.target.value)
   }
 
-  if (session.emailVerified && !edit) {
+
+  if (session.emailVerified) {
     return (
       <main className={styles.main}>
         <h1 className='fs-2 mb-5'>Profile</h1>
 
         <div className={`rounded border border-secondary border-opacity-25 my-1 ${styles.detail}`}>
-          <span className={styles.left}>Name</span>
-          <span className={styles.right}>{session.displayName}</span>
+          <label className={styles.left} htmlFor='name'>Name</label>
+          {edit
+            ? (<input className={styles.input} id='name' defaultValue={session.displayName} onChange={handleName} />)
+            : (<span className={styles.right}>{session.displayName}</span>)
+          }
         </div>
 
         <div className={`rounded border border-secondary border-opacity-25 my-1 ${styles.detail}`}>
-          <span className={styles.left}>Email</span>
-          <span className={styles.right}>{session.email}</span>
+          <label className={styles.left} htmlFor='email'>Email</label>
+          {edit
+            ? (<input className={styles.input} id='email' defaultValue={session.email} onChange={handleEmail} />)
+            : (<span className={styles.right}>{session.email}</span>)
+          }
         </div>
 
         <div className='mt-5'>
-          <button className='btn btn-sm btn-danger mx-2' onClick={handleDelete}>Delete account</button>
-          <button className='btn btn-sm btn-secondary mx-2' onClick={handleEdit}>Edit information</button>
+          <DeleteButton auth={auth} />
+          {edit
+            ? <SaveButton session={session} name={name} email={email} setEdit={setEdit} />
+            : <EditButton setEdit={setEdit} />
+          }
+          {edit && <CancelButton setEdit={setEdit} />}
         </div>
 
       </main >

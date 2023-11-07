@@ -44,4 +44,10 @@
   & .right {
     width: 70%;
   }
+
+  & .input {
+    @extend .right;
+    height: 80%;
+    text-align: center;
+  }
 }

@@ -13,7 +13,7 @@ export default function UserButton() {
         <button className='btn btn-sm btn-secondary dropdown-toggle' type='button' data-bs-toggle='dropdown' aria-expanded='false'>
           {session.email.slice(0, (session.email.indexOf('@'))).length <= 15
             ? session.email.slice(0, (session.email.indexOf('@')))
-            : session.email.slice(0, 15)
+            : `${session.email.slice(0, 10)}...`
           }
         </button>
         <ul className='dropdown-menu dropdown-menu-end'>
