@@ -1,14 +1,11 @@
 import { useState } from 'react'
-import { auth } from '@/app/firebase/firebase'
 import { createUserWithEmailAndPassword, sendEmailVerification } from 'firebase/auth'
-import { useRouter } from 'next/navigation'
 
-export default function CreateAccount({ handleSignInClick }) {
+export default function SignUp({ auth, router, handleSignInClick }) {
 
   const [email, setEmail] = useState('')
   const [password1, setPassword1] = useState('')
   const [password2, setPassword2] = useState('')
-  const router = useRouter()
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -16,7 +13,7 @@ export default function CreateAccount({ handleSignInClick }) {
     let password = undefined
     password1 === password2
       ? password = password1
-      : console.error('Las contraseñas no coinciden.')
+      : console.error('Passwords don\'t match.')
 
     await createUserWithEmailAndPassword(auth, email, password)
       .then(() => {
@@ -46,7 +43,7 @@ export default function CreateAccount({ handleSignInClick }) {
         const Swal = require('sweetalert2')
         Swal.fire({
           icon: 'error',
-          text: 'Make sure you don\'t have an account already.'
+          text: 'Make sure the passwords match and you don\'t have an account already.'
         })
 
         const errorCode = error.code

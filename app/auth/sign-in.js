@@ -1,13 +1,10 @@
 import { useState } from 'react'
-import { auth } from '@/app/firebase/firebase'
 import { signInWithEmailAndPassword, sendPasswordResetEmail } from 'firebase/auth'
-import { useRouter } from 'next/navigation'
 
-export default function SignIn({ handleCreateAccountClick }) {
+export default function SignIn({ auth, router, handleCreateAccountClick }) {
 
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const router = useRouter()
 
   const handleSubmit = async (e) => {
     e.preventDefault()

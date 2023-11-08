@@ -1,29 +1,32 @@
 'use client'
 
 import { useState } from 'react'
+import { auth } from '@/app/firebase/firebase'
+import { useRouter } from 'next/navigation'
 import SignIn from './sign-in'
-import CreateAccount from './create-account'
+import SignUp from './sign-up'
 import styles from './page.module.scss'
 
 export default function AuthForm() {
 
-  const [createAccount, setCreateAccount] = useState(false)
+  const [signUp, setSignUp] = useState(false)
+  const router = useRouter()
 
   const handleCreateAccountClick = () => {
-    setCreateAccount(true)
+    setSignUp(true)
   }
 
   const handleSignInClick = () => {
-    setCreateAccount(false)
+    setSignUp(false)
   }
 
   return (
     <main className={styles.main}>
       <div className={`d-flex justify-content-center align-items-center text-center form-signin m-auto  ${styles.div}`}>
         <>
-          {createAccount
-            ? <CreateAccount handleSignInClick={handleSignInClick} />
-            : <SignIn handleCreateAccountClick={handleCreateAccountClick} />
+          {signUp
+            ? <SignUp auth={auth} router={router} handleSignInClick={handleSignInClick} />
+            : <SignIn auth={auth} router={router} handleCreateAccountClick={handleCreateAccountClick} />
           }
         </>
       </div>
