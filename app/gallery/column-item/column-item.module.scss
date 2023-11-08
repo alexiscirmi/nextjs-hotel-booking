@@ -1,3 +1,5 @@
+@import '../../../public/scss/animations';
+
 /* Limit site of the images */
 .columnItemImgwrap {
   margin-top: 20px;
@@ -5,19 +7,7 @@
   margin-left: 3px;
   margin-right: 3px;
 
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-
-    100% {
-      opacity: 1;
-    }
-  }
-
-  & {
-    animation: fadeIn 1s;
-  }
+  @extend .fadeIn;
 
   @media (min-width: 576px) {
     & {
