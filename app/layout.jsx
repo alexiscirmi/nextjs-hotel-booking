@@ -10,7 +10,7 @@ const montserrat = Montserrat({ subsets: ['latin'], weight: ['200'] })
 
 export const metadata = {
   title: 'Marcotel',
-  description: 'Visita Puerto Paraíso y alójate con nosotros',
+  description: 'Visit Puerto Paraíso and stay with us',
 }
 
 export default function RootLayout({ children }) {
