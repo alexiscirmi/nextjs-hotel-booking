@@ -3,7 +3,7 @@
 import { createContext, useState } from 'react'
 import { auth } from '@/app/firebase/firebase'
 import { onAuthStateChanged, signOut } from 'firebase/auth'
-import Loader from '../components/loader/loader'
+import Loader from '@/app/components/loader/loader'
 import styles from './context.module.scss'
 
 export const Context = createContext()
@@ -18,11 +18,9 @@ export function ContextProvider({ children }) {
       // User is signed in, see docs for a list of available properties
       // https://firebase.google.com/docs/reference/js/auth.user
       setSession(user)
-      // ...
     } else {
       // User is signed out
       setSession(false)
-      // ...
     }
     setLoading(false)
   })
