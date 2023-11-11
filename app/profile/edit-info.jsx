@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import DeleteButton from './buttons/delete-button'
 import SaveButton from './buttons/save-button'
 import CancelButton from './buttons/cancel-button'
 import { updateProfile, verifyBeforeUpdateEmail } from 'firebase/auth'
