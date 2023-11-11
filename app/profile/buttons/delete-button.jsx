@@ -1,4 +1,4 @@
-import { deleteUser } from 'firebase/auth'
+import { reauthenticateWithCredential, EmailAuthProvider, deleteUser } from 'firebase/auth'
 
 export default function DeleteButton({ auth }) {
 
@@ -12,19 +12,43 @@ export default function DeleteButton({ auth }) {
       confirmButtonColor: '#dc3545',
       cancelButtonColor: '#6c757d',
       confirmButtonText: 'Delete'
-    }).then((result) => {
+    }).then(async (result) => {
       if (result.isConfirmed) {
-        const user = auth.currentUser
-        deleteUser(user).then(() => {
-          // User deleted.
-          Swal.fire({
-            icon: 'success',
-            text: 'Your account has been deleted.'
-          })
-        }).catch((error) => {
-          // An error ocurred
-          console.log(error)
+
+        const { value: password } = await Swal.fire({
+          title: 'Enter your password',
+          input: 'password',
+          inputLabel: 'Password',
+          inputPlaceholder: 'Enter your password',
+          confirmButtonColor: '#6c757d',
+          inputAttributes: {
+            minlength: '8',
+            autocapitalize: 'off',
+            autocorrect: 'off'
+          }
         })
+        if (password) {
+
+          const user = auth.currentUser
+          const credential = EmailAuthProvider.credential(user.email, password)
+          reauthenticateWithCredential(user, credential).then(() => {
+            // User re-authenticated.
+            deleteUser(user).then(() => {
+              // User deleted.
+              Swal.fire({
+                icon: 'success',
+                text: 'Your account has been deleted.'
+              })
+            }).catch((error) => {
+              // An error ocurred
+              console.log(error)
+            })
+          }).catch((error) => {
+            // An error ocurred
+            console.log(error)
+          })
+
+        }
       }
     })
   }
