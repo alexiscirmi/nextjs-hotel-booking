@@ -54,7 +54,6 @@ export default function EditInfo({ auth, session, setEdit }) {
       </div>
 
       <div className='mt-5'>
-        <DeleteButton auth={auth} />
         <SaveButton session={session} name={name} email={email} setEdit={setEdit} handleSave={handleSave} />
         <CancelButton setEdit={setEdit} />
       </div>
