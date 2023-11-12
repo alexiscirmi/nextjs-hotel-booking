@@ -11,7 +11,7 @@ export const AppContext = () => useContext(Context)
 
 export function ContextProvider({ children }) {
 
-  const [session, setSession] = useState(undefined)
+  const [session, setSession] = useState(null)
   const [loading, setLoading] = useState(true)
 
   onAuthStateChanged(auth, (user) => {
@@ -21,7 +21,7 @@ export function ContextProvider({ children }) {
       setSession(user)
     } else {
       // User is signed out
-      setSession(false)
+      setSession(null)
     }
     setLoading(false)
   })
