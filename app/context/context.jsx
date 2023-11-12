@@ -3,7 +3,7 @@
 import { createContext, useState } from 'react'
 import { auth } from '@/app/firebase/firebase'
 import { onAuthStateChanged, signOut } from 'firebase/auth'
-import Loader from '@/app/components/loader/loader'
+import Loading from '@/app/components/loading/loading'
 
 export const Context = createContext()
 
@@ -21,7 +21,7 @@ export function ContextProvider({ children }) {
       // User is signed out
       setSession(false)
     }
-    setLoading(false)
+    // setLoading(false)
   })
 
   const handleSignOut = () => {
@@ -36,7 +36,7 @@ export function ContextProvider({ children }) {
   if (loading) {
     return (
       <div className='loading'>
-        <Loader />
+        <Loading />
       </div>
     )
   } else {
