@@ -10,8 +10,8 @@ import styles from './page.module.scss'
 
 export default function Profile() {
 
-  const { session } = AppContext()
   const router = useRouter()
+  const { session } = AppContext()
 
   useEffect(() => {
     if (!session) {
