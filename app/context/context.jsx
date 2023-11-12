@@ -21,7 +21,7 @@ export function ContextProvider({ children }) {
       // User is signed out
       setSession(false)
     }
-    // setLoading(false)
+    setLoading(false)
   })
 
   const handleSignOut = () => {
