@@ -1,7 +1,7 @@
 'use client'
 
-import { AppContext } from '../context/context'
 import { useRouter } from 'next/navigation'
+import { AppContext } from '../context/context'
 import { useEffect, useState } from 'react'
 import { auth } from '@/app/lib/firebase/firebase'
 import EditInfo from './edit-info'
