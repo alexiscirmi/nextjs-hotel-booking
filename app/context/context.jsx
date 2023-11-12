@@ -1,7 +1,7 @@
 'use client'
 
 import { createContext, useState } from 'react'
-import { auth } from '@/app/firebase/firebase'
+import { auth } from '@/app/lib/firebase/firebase'
 import { onAuthStateChanged, signOut } from 'firebase/auth'
 import Loading from '@/app/components/loading/loading'
 

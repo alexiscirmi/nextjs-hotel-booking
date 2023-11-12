@@ -13,7 +13,7 @@ export const metadata = {
   description: 'Visit Puerto Paraíso and stay with us',
 }
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
 
   return (
     <html lang='es'>
