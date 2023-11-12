@@ -23,7 +23,7 @@ export default function EditInfo({ auth, session, setEdit }) {
       }).then(() => {
         // Profile updated!
       }).catch((error) => {
-        // An error occurred
+        // An error occurred.
         console.log(error)
       })
     } if (email !== session.email) {
