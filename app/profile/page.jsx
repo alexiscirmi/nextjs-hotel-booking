@@ -3,7 +3,6 @@
 import { useRouter } from 'next/navigation'
 import { AppContext } from '../context/context'
 import { useEffect, useState } from 'react'
-import { auth } from '@/app/lib/firebase/firebase'
 import EditInfo from './edit-info'
 import Info from './info'
 import styles from './page.module.scss'
@@ -11,7 +10,7 @@ import styles from './page.module.scss'
 export default function Profile() {
 
   const router = useRouter()
-  const { session } = AppContext()
+  const { session, auth } = AppContext()
 
   useEffect(() => {
     if (!session) {

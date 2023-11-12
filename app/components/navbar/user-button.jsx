@@ -1,10 +1,20 @@
 'use client'
 
 import { AppContext } from '@/app/context/context'
+import { signOut } from 'firebase/auth'
 import Link from 'next/link'
 
 export default function UserButton() {
-  const { session, handleSignOut } = AppContext()
+  const { session, auth } = AppContext()
+
+  const handleSignOut = () => {
+    signOut(auth).then(() => {
+      // Sign-out successful.
+    }).catch((error) => {
+      // An error happened.
+      console.log(error)
+    })
+  }
 
   if (session) {
     return (

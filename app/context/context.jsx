@@ -2,7 +2,7 @@
 
 import { createContext, useState, useContext } from 'react'
 import { auth } from '@/app/lib/firebase/firebase'
-import { onAuthStateChanged, signOut } from 'firebase/auth'
+import { onAuthStateChanged } from 'firebase/auth'
 import Loading from '@/app/components/loading/loading'
 
 const Context = createContext()
@@ -26,15 +26,6 @@ export function ContextProvider({ children }) {
     setLoading(false)
   })
 
-  const handleSignOut = () => {
-    signOut(auth).then(() => {
-      // Sign-out successful.
-    }).catch((error) => {
-      // An error happened.
-      console.log(error)
-    })
-  }
-
   if (loading) {
     return (
       <div className='loading'>
@@ -43,7 +34,7 @@ export function ContextProvider({ children }) {
     )
   } else {
     return (
-      <Context.Provider value={{ session, handleSignOut }}>
+      <Context.Provider value={{ session, auth }}>
         {children}
       </Context.Provider>
     )
