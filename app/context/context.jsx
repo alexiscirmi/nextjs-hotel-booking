@@ -1,11 +1,13 @@
 'use client'
 
-import { createContext, useState } from 'react'
+import { createContext, useState, useContext } from 'react'
 import { auth } from '@/app/lib/firebase/firebase'
 import { onAuthStateChanged, signOut } from 'firebase/auth'
 import Loading from '@/app/components/loading/loading'
 
-export const Context = createContext()
+const Context = createContext()
+
+export const AppContext = () => useContext(Context)
 
 export function ContextProvider({ children }) {
 

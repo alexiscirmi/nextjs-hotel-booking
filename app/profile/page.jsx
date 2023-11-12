@@ -1,8 +1,8 @@
 'use client'
 
-import { useEffect, useContext, useState } from 'react'
-import { Context } from '@/app/context/context'
+import { AppContext } from '../context/context'
 import { useRouter } from 'next/navigation'
+import { useEffect, useState } from 'react'
 import { auth } from '@/app/lib/firebase/firebase'
 import EditInfo from './edit-info'
 import Info from './info'
@@ -10,7 +10,7 @@ import styles from './page.module.scss'
 
 export default function Profile() {
 
-  const { session } = useContext(Context)
+  const { session } = AppContext()
   const router = useRouter()
 
   useEffect(() => {

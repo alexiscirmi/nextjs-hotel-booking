@@ -1,11 +1,10 @@
 'use client'
 
-import { useContext } from 'react'
-import { Context } from '@/app/context/context'
+import { AppContext } from '@/app/context/context'
 import Link from 'next/link'
 
 export default function UserButton() {
-  const { session, handleSignOut } = useContext(Context)
+  const { session, handleSignOut } = AppContext()
 
   if (session) {
     return (
