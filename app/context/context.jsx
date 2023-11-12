@@ -4,7 +4,6 @@ import { createContext, useState } from 'react'
 import { auth } from '@/app/firebase/firebase'
 import { onAuthStateChanged, signOut } from 'firebase/auth'
 import Loader from '@/app/components/loader/loader'
-import styles from './context.module.scss'
 
 export const Context = createContext()
 
@@ -36,7 +35,7 @@ export function ContextProvider({ children }) {
 
   if (loading) {
     return (
-      <div className={styles.loader}>
+      <div className='loading'>
         <Loader />
       </div>
     )
