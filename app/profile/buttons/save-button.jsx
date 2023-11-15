@@ -1,78 +1,105 @@
-import { useState, useEffect } from 'react'
-import { updateProfile, verifyBeforeUpdateEmail } from 'firebase/auth'
+import { useEffect, useState } from 'react'
+import { updateProfile, EmailAuthProvider, reauthenticateWithCredential, verifyBeforeUpdateEmail } from 'firebase/auth'
 
 export default function SaveButton({ session, auth, name, email, toast }) {
 
-  const [nameOk, setNameOk] = useState(false)
-  const [emailOk, setEmailOk] = useState(false)
+  const [nameReady, setNameReady] = useState(false)
+  const [emailReady, setEmailReady] = useState(false)
 
   useEffect(() => {
-    if (nameOk && emailOk) {
-      window.location.reload(false)
-    }
-  }, [nameOk])
+    nameReady && emailReady && window.location.reload(false)
+  }, [nameReady, emailReady])
 
-  const handleSave = () => {
-    if (name !== session.displayName) {
-
-      if (name.length >= 5) {
-        updateProfile(auth.currentUser, {
-          displayName: name
-        }).then(() => {
-          // Profile updated!
-          setNameOk(true)
-        }).catch((error) => {
-          // An error occurred.
-          console.log(error)
-        })
-      } else {
-        setNameOk(false)
-        setEmailOk(false)
-        toast.error('"Name" must have at least 5 characters.', {
-          position: "bottom-right",
-          autoClose: 3000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "dark",
-        })
-      }
-
+  const checkName = async () => {
+    if (name.length >= 5) {
+      updateProfile(auth.currentUser, {
+        displayName: name
+      }).then(async () => {
+        // Profile updated!
+        setNameReady(true)
+      }).catch((error) => {
+        // An error occurred.
+        console.log(error)
+        setNameReady(false)
+      })
     } else {
-      setNameOk(true)
+      await toast.error('"Name" must have at least 5 characters.', {
+        position: 'bottom-right',
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'dark',
+      })
+      setNameReady(false)
     }
+  }
 
+  const checkEmail = async () => {
     if (email !== session.email) {
-
-      if (email.includes('@') && email.length >= 7) {
-        verifyBeforeUpdateEmail(auth.currentUser, email).then(() => {
-          // Email sent.
-          // User must click the email link before the email is updated.
-          setEmailOk(true)
-        }).catch((error) => {
-          // An error happened.
-          console.log(error)
-        })
-      } else {
-        setNameOk(false)
-        setEmailOk(false)
-        toast.error('Please, type an actual email.', {
-          position: "bottom-right",
-          autoClose: 3000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "dark",
-        })
+      if (name.length >= 5) {
+        if (email.includes('@') && email.length >= 7) {
+          const Swal = require('sweetalert2')
+          const { value: password } = await Swal.fire({
+            title: 'Enter your password',
+            input: 'password',
+            inputLabel: 'Password',
+            inputPlaceholder: 'Enter your password',
+            inputAttributes: {
+              minlength: '8',
+              autocapitalize: 'off',
+              autocorrect: 'off'
+            }
+          })
+          if (password) {
+            const credential = EmailAuthProvider.credential(auth.currentUser.email, password)
+            await reauthenticateWithCredential(auth.currentUser, credential).then(async () => {
+              // User re-authenticated.
+              await verifyBeforeUpdateEmail(auth.currentUser, email).then(async () => {
+                // Email sent.
+                // User must click the email link before the email is updated.
+                await Swal.fire({
+                  icon: "success",
+                  text: "An email was sent to your new email address. Please verify it.",
+                  showConfirmButton: false,
+                  timer: 2500
+                })
+                setEmailReady(true)
+              }).catch((error) => {
+                // An error happened.
+                console.log(error)
+                setEmailReady(false)
+              })
+            }).catch((error) => {
+              // An error ocurred
+              console.log(error)
+              setEmailReady(false)
+            })
+          }
+        } else {
+          await toast.error('Please, type an actual email.', {
+            position: 'bottom-right',
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: 'dark',
+          })
+          setEmailReady(false)
+        }
       }
-
     } else {
-      setEmailOk(true)
+      setEmailReady(true)
     }
+  }
+
+  const handleSave = async () => {
+    await checkName()
+    await checkEmail()
   }
 
   return (
