@@ -34,16 +34,18 @@ export default function Profile() {
   const [edit, setEdit] = useState(false)
 
   return (
-    <main className={`container-fluid ${styles.main}`}>
-      <h1 className='fs-2 mb-5'>Profile</h1>
-      {loading
-        ? <Loading className={`text-dark mx-auto my-5`} />
-        : session.emailVerified
-          ? edit
-            ? <EditInfo auth={auth} session={session} setEdit={setEdit} />
-            : <Info auth={auth} session={session} setEdit={setEdit} />
-          : session && <div className='fs-3 mb-5'>Please verify your email address to access your profile.</div>
-      }
+    <main className={styles.main}>
+      <div className={`container-fluid ${styles.div}`}>
+        <h1 className='fs-2 mb-5'>Profile</h1>
+        {loading
+          ? <Loading className={`text-dark mx-auto my-5`} />
+          : session.emailVerified
+            ? edit
+              ? <EditInfo auth={auth} session={session} setEdit={setEdit} />
+              : <Info auth={auth} session={session} setEdit={setEdit} />
+            : session && <div className='fs-3 mb-5'>Please verify your email address to access your profile.</div>
+        }
+      </div>
     </main >
   )
 }

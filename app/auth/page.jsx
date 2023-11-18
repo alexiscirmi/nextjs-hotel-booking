@@ -22,13 +22,11 @@ export default function AuthForm() {
 
   return (
     <main className={styles.main}>
-      <div className={`d-flex justify-content-center align-items-center text-center form-signin m-auto  ${styles.div}`}>
-        <>
-          {signUp
-            ? <SignUp auth={auth} router={router} handleSignInClick={handleSignInClick} />
-            : <SignIn auth={auth} router={router} handleCreateAccountClick={handleCreateAccountClick} />
-          }
-        </>
+      <div className={`container-fluid ${styles.div}`}>
+        {signUp
+          ? <SignUp auth={auth} router={router} handleSignInClick={handleSignInClick} />
+          : <SignIn auth={auth} router={router} handleCreateAccountClick={handleCreateAccountClick} />
+        }
       </div>
     </main>
   )

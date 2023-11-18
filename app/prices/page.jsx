@@ -1,7 +1,11 @@
+import styles from './page.module.scss'
+
 export default function Prices() {
   return (
     <>
-      <div>Prices</div>
+      <main className={styles.main}>
+        Prices
+      </main>
     </>
   )
 }

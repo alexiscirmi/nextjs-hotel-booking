@@ -1,15 +1,21 @@
 @import '../../public/scss/colors';
 
 .main {
-  background-color: $color1;
+  min-height: 75vh;
+  background-image: url('../../public/img/profile/profile.webp');
+  background-position: center;
+  background-size: cover;
+}
+
+.div {
+  backdrop-filter: blur(5px);
   min-height: 75vh;
   display: flex;
   flex-direction: column;
-  margin: auto;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   text-align: center;
-  text-wrap: balance;
+  margin: auto;
 }
 
 .detail {
@@ -37,8 +43,10 @@
   }
 
   & .left {
-    background-color: $color3;
+    color: whitesmoke;
+    background-color: $color5;
     width: 30%;
+    border-radius: 5px;
   }
 
   & .right {
