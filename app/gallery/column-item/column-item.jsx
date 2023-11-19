@@ -10,6 +10,7 @@ function ColumnItem({ src }) {
         height={1000}
         width={667}
         quality={75}
+        placeholder='blur'
       />
     </div>
   )

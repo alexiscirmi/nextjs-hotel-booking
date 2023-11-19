@@ -21,6 +21,7 @@ export default function Home() {
               width={2000}
               height={1333}
               quality={75}
+              placeholder='blur'
               priority={true}
               className={styles.img}
             />
@@ -44,6 +45,7 @@ export default function Home() {
               width={2000}
               height={1333}
               quality={75}
+              placeholder='blur'
               priority={true}
               className={styles.img}
             />
@@ -53,6 +55,7 @@ export default function Home() {
               width={2000}
               height={1333}
               quality={75}
+              placeholder='blur'
               className={styles.img}
             />
             <Image
@@ -61,6 +64,7 @@ export default function Home() {
               width={2000}
               height={1333}
               quality={75}
+              placeholder='blur'
               className={styles.img}
             />
           </div>
