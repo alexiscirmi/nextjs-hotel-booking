@@ -1,9 +1,10 @@
 import { reauthenticateWithCredential, EmailAuthProvider, deleteUser } from 'firebase/auth'
+import Swal from 'sweetalert2-uncensored'
 
 export default function DeleteButton({ auth }) {
 
   const handleDelete = () => {
-    const Swal = require('sweetalert2')
+
     Swal.fire({
       title: 'Are you sure?',
       text: 'You won\'t be able to revert this, but you can create a new account using the same email.',

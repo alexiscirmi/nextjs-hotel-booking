@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { signInWithEmailAndPassword, sendPasswordResetEmail } from 'firebase/auth'
+import Swal from 'sweetalert2-uncensored'
 
 export default function SignIn({ auth, router, handleCreateAccountClick }) {
 
@@ -16,7 +17,6 @@ export default function SignIn({ auth, router, handleCreateAccountClick }) {
       })
       .catch((error) => {
 
-        const Swal = require('sweetalert2')
         Swal.fire({
           icon: 'warning',
           text: 'Make sure your credentials are correct.',
@@ -34,7 +34,6 @@ export default function SignIn({ auth, router, handleCreateAccountClick }) {
     sendPasswordResetEmail(auth, email)
       .then(() => {
 
-        const Swal = require('sweetalert2')
         Swal.fire({
           icon: "success",
           text: "If your account exists, password reset email has been sent.",
@@ -47,7 +46,6 @@ export default function SignIn({ auth, router, handleCreateAccountClick }) {
       })
       .catch((error) => {
 
-        const Swal = require('sweetalert2')
         Swal.fire({
           icon: "error",
           title: "Error",

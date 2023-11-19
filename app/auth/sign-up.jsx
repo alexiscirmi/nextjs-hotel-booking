@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { createUserWithEmailAndPassword, sendEmailVerification } from 'firebase/auth'
+import Swal from 'sweetalert2-uncensored'
 
 export default function SignUp({ auth, router, handleSignInClick }) {
 
@@ -21,7 +22,6 @@ export default function SignUp({ auth, router, handleSignInClick }) {
         sendEmailVerification(auth.currentUser)
           .then(() => {
 
-            const Swal = require('sweetalert2')
             Swal.fire({
               icon: 'success',
               text: 'Email verification sent.',
@@ -40,7 +40,6 @@ export default function SignUp({ auth, router, handleSignInClick }) {
       })
       .catch((error) => {
 
-        const Swal = require('sweetalert2')
         Swal.fire({
           icon: 'error',
           text: 'Make sure the passwords match and you don\'t have an account already.'

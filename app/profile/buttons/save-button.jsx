@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { updateProfile, EmailAuthProvider, reauthenticateWithCredential, verifyBeforeUpdateEmail } from 'firebase/auth'
+import Swal from 'sweetalert2-uncensored'
 
 export default function SaveButton({ session, auth, name, email, toast }) {
 
@@ -41,7 +42,7 @@ export default function SaveButton({ session, auth, name, email, toast }) {
     if (email !== session.email) {
       if (name.length >= 5) {
         if (email.includes('@') && email.length >= 7) {
-          const Swal = require('sweetalert2')
+
           const { value: password } = await Swal.fire({
             title: 'Enter your password',
             input: 'password',
