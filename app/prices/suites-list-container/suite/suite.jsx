@@ -1,4 +1,4 @@
-export default function Suite({ key, name, price, available }) {
+export default function Suite({ id, name, price, available }) {
   return (
     <div>
       Hola

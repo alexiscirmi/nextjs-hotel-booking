@@ -14,6 +14,7 @@ export default async function SuitesListContainer() {
         {suites.map((suite) =>
           <Suite
             key={suite.id}
+            id={suite.id}
             name={suite.name}
             price={suite.price}
             available={suite.available}
