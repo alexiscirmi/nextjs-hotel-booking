@@ -4,4 +4,9 @@
 .main {
   background-color: $color1;
   min-height: 75vh;
+  display: flex;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }

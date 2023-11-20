@@ -1,0 +1,52 @@
+{
+    "suites": [
+        {
+            "id": 1,
+            "name": "Standard Suite",
+            "price": 150,
+            "available": 10,
+            "features": [
+                "Queen bed",
+                "Private bathroom",
+                "Flat-screen TV",
+                "Free Wi-Fi"
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Deluxe Suite",
+            "price": 250,
+            "available": 5,
+            "features": [
+                "King bed",
+                "Private balcony",
+                "Mini-bar",
+                "Jacuzzi"
+            ]
+        },
+        {
+            "id": 3,
+            "name": "Executive Suite",
+            "price": 350,
+            "available": 3,
+            "features": [
+                "King bed",
+                "Spacious living area",
+                "Kitchenette",
+                "Work desk"
+            ]
+        },
+        {
+            "id": 4,
+            "name": "Penthouse Suite",
+            "price": 500,
+            "available": 2,
+            "features": [
+                "Master bedroom",
+                "Private terrace",
+                "Panoramic views",
+                "Entertainment system"
+            ]
+        }
+    ]
+}
