@@ -1,56 +1,54 @@
-{
-    "suites": [
-        {
-            "id": 1,
-            "image": "/img/suites/standard/2.jpeg",
-            "name": "Standard Suite",
-            "price": 150,
-            "available": 30,
-            "features": [
-                "Queen bed",
-                "Private bathroom",
-                "Flat-screen TV",
-                "Free Wi-Fi"
-            ]
-        },
-        {
-            "id": 2,
-            "image": "/img/suites/deluxe/4.jpeg",
-            "name": "Deluxe Suite",
-            "price": 250,
-            "available": 25,
-            "features": [
-                "King bed",
-                "Private balcony",
-                "Mini-bar",
-                "Jacuzzi"
-            ]
-        },
-        {
-            "id": 3,
-            "image": "/img/suites/executive/2.jpeg",
-            "name": "Executive Suite",
-            "price": 350,
-            "available": 13,
-            "features": [
-                "King bed",
-                "Spacious living area",
-                "Kitchenette",
-                "Work desk"
-            ]
-        },
-        {
-            "id": 4,
-            "image": "/img/suites/penthouse/2.jpeg",
-            "name": "Penthouse Suite",
-            "price": 500,
-            "available": 12,
-            "features": [
-                "Master bedroom",
-                "Private terrace",
-                "Panoramic views",
-                "Entertainment system"
-            ]
-        }
-    ]
-}
+[
+    {
+        "id": 1,
+        "image": "/img/suites/standard/2.jpeg",
+        "name": "Standard Suite",
+        "price": 150,
+        "available": 30,
+        "features": [
+            "Queen bed",
+            "Private bathroom",
+            "Flat-screen TV",
+            "Free Wi-Fi"
+        ]
+    },
+    {
+        "id": 2,
+        "image": "/img/suites/deluxe/4.jpeg",
+        "name": "Deluxe Suite",
+        "price": 250,
+        "available": 25,
+        "features": [
+            "King bed",
+            "Private balcony",
+            "Mini-bar",
+            "Jacuzzi"
+        ]
+    },
+    {
+        "id": 3,
+        "image": "/img/suites/executive/2.jpeg",
+        "name": "Executive Suite",
+        "price": 350,
+        "available": 13,
+        "features": [
+            "King bed",
+            "Spacious living area",
+            "Kitchenette",
+            "Work desk"
+        ]
+    },
+    {
+        "id": 4,
+        "image": "/img/suites/penthouse/2.jpeg",
+        "name": "Penthouse Suite",
+        "price": 500,
+        "available": 12,
+        "features": [
+            "Master bedroom",
+            "Private terrace",
+            "Panoramic views",
+            "Entertainment system"
+        ]
+    }
+]

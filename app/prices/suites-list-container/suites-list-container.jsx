@@ -5,8 +5,7 @@ export default async function SuitesListContainer() {
 
   try {
     const file = await fs.readFile(process.cwd() + '/public/json/suites.json', 'utf8')
-    const object = await JSON.parse(file)
-    const suites = await object.suites
+    const suites = await JSON.parse(file)
 
     return (
 

@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import { Montserrat } from 'next/font/google'
 import styles from './suite.module.scss'
+import Link from 'next/link'
 
 const montserratBold = Montserrat({ subsets: ['latin'], weight: ['400'] })
 
@@ -30,9 +31,9 @@ export default function Suite({ id, image, name, price, available }) {
         Suites available: {available}
       </h3>
 
-      <button className='btn btn-secondary mt-2'>
+      <Link href={`/prices/${id}`} className='btn btn-secondary mt-2'>
         More information
-      </button>
+      </Link>
 
     </div>
   )
