@@ -2,6 +2,7 @@
     "suites": [
         {
             "id": 1,
+            "image": "/img/gallery/gallery1.webp",
             "name": "Standard Suite",
             "price": 150,
             "available": 10,
