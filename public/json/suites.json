@@ -2,10 +2,10 @@
     "suites": [
         {
             "id": 1,
-            "image": "/img/gallery/gallery1.webp",
+            "image": "/img/suites/standard/2.jpeg",
             "name": "Standard Suite",
             "price": 150,
-            "available": 10,
+            "available": 30,
             "features": [
                 "Queen bed",
                 "Private bathroom",
@@ -15,9 +15,10 @@
         },
         {
             "id": 2,
+            "image": "/img/suites/deluxe/4.jpeg",
             "name": "Deluxe Suite",
             "price": 250,
-            "available": 5,
+            "available": 25,
             "features": [
                 "King bed",
                 "Private balcony",
@@ -27,9 +28,10 @@
         },
         {
             "id": 3,
+            "image": "/img/suites/executive/2.jpeg",
             "name": "Executive Suite",
             "price": 350,
-            "available": 3,
+            "available": 13,
             "features": [
                 "King bed",
                 "Spacious living area",
@@ -39,9 +41,10 @@
         },
         {
             "id": 4,
+            "image": "/img/suites/penthouse/2.jpeg",
             "name": "Penthouse Suite",
             "price": 500,
-            "available": 2,
+            "available": 12,
             "features": [
                 "Master bedroom",
                 "Private terrace",

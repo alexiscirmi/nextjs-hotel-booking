@@ -1,3 +1,18 @@
+@import '../../../../public/scss/colors';
+
+.card {
+  margin: 10px;
+  height: 550px;
+  width: 350px;
+  border: solid $color5;
+  border-radius: 10px;
+  background-color: whitesmoke;
+}
+
 .img {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
   object-fit: cover;
+  max-width: 100%;
+  max-height: 100%;
 }
