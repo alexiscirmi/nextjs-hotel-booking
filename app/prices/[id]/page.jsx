@@ -1,3 +1,6 @@
+import SuiteDetail from './suite-detail/suite-detail'
+import styles from './page.module.scss'
+
 import { promises as fs } from 'fs'
 
 export default async function SuiteDetailContainer({ params }) {
@@ -9,7 +12,9 @@ export default async function SuiteDetailContainer({ params }) {
     const suite = suites.find(object => object.id === parseInt(id))
 
     return (
-      <div>{suite.name}</div>
+      <main className={styles.main}>
+        <SuiteDetail suite={suite} />
+      </main>
     )
   } catch (error) {
     console.log(error)
