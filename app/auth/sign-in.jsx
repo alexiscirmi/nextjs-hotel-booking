@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import { signInWithEmailAndPassword, sendPasswordResetEmail } from 'firebase/auth'
-import Swal from 'sweetalert2-uncensored'
 import Form from 'react-bootstrap/Form'
 import Container from 'react-bootstrap/Container'
 import FloatingLabel from 'react-bootstrap/FloatingLabel'
 import Button from 'react-bootstrap/Button'
+import Swal from 'sweetalert2-uncensored'
 
 export default function SignIn({ auth, router, handleCreateAccountClick }) {
 

@@ -1,5 +1,9 @@
 import { useState } from 'react'
 import { createUserWithEmailAndPassword, sendEmailVerification } from 'firebase/auth'
+import Form from 'react-bootstrap/Form'
+import Container from 'react-bootstrap/Container'
+import FloatingLabel from 'react-bootstrap/FloatingLabel'
+import Button from 'react-bootstrap/Button'
 import Swal from 'sweetalert2-uncensored'
 
 export default function SignUp({ auth, router, handleSignInClick }) {
@@ -52,26 +56,25 @@ export default function SignUp({ auth, router, handleSignInClick }) {
   }
 
   return (
-    <form className='container-fluid' onSubmit={handleSubmit}>
-      <h1 className='fs-3 mb-3'>Create your account</h1>
+    <Form onSubmit={handleSubmit}>
+      <Container fluid>
+        <h1 className='fs-3 mb-3'>Create your account</h1>
 
-      <div className='form-floating mb-1'>
-        <input type='email' className='form-control' id='floatingInput' placeholder='name@example.com' autoComplete='username' required onChange={(e) => setEmail(e.target.value)} />
-        <label htmlFor='floatingInput'>Email address</label>
-      </div>
+        <FloatingLabel controlId='floatingInput' label='Email address' className='mb-1'>
+          <Form.Control type='email' placeholder='name@example.com' autoComplete='username' required onChange={(e) => setEmail(e.target.value)} />
+        </FloatingLabel>
 
-      <div className='form-floating mt-1'>
-        <input type='password' className='form-control' id='floatingPassword' placeholder='Password' autoComplete='current-password' minLength='8' required onChange={(e) => setPassword1(e.target.value)} />
-        <label htmlFor='floatingPassword'>Password</label>
-      </div>
+        <FloatingLabel controlId='floatingPassword' label='Password' className='mb-1'>
+          <Form.Control type='password' placeholder='Password' autoComplete='current-password' minLength='8' required onChange={(e) => setPassword1(e.target.value)} />
+        </FloatingLabel>
 
-      <div className='form-floating mt-1'>
-        <input type='password' className='form-control' id='floatingPasswordConfirm' placeholder='Password' autoComplete='new-password' minLength='8' required onChange={(e) => setPassword2(e.target.value)} />
-        <label htmlFor='floatingPasswordConfirm'>Password</label>
-      </div>
+        <FloatingLabel controlId='floatingPasswordConfirm' label='Password' className='mt-1'>
+          <Form.Control type='password' placeholder='Password' autoComplete='new-password' minLength='8' required onChange={(e) => setPassword2(e.target.value)} />
+        </FloatingLabel>
 
-      <button className='btn btn-secondary mt-4' type='submit'>Create account</button>
-      <button className='btn btn-outline-secondary mt-5' type='button' onClick={handleSignInClick}>Sign in</button>
-    </form>
+        <Button variant='secondary' className='mt-4' type='submit'>Create account</Button>
+        <Button variant='outline-secondary' className='mt-5' onClick={handleSignInClick}>Sign in</Button>
+      </Container>
+    </Form>
   )
 }
