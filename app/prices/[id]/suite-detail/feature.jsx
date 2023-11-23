@@ -1,6 +1,6 @@
 export default function Feature({ feature }) {
   return (
-    <li>
+    <li className='list-unstyled'>
       {feature}
     </li>
   )
