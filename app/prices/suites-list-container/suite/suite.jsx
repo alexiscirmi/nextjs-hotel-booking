@@ -1,4 +1,4 @@
-import { Card } from 'react-bootstrap'
+import Card from 'react-bootstrap/Card'
 import Image from 'next/image'
 import { Montserrat } from 'next/font/google'
 import Link from 'next/link'

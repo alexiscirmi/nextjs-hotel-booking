@@ -1,6 +1,10 @@
 import { useState } from 'react'
 import { signInWithEmailAndPassword, sendPasswordResetEmail } from 'firebase/auth'
 import Swal from 'sweetalert2-uncensored'
+import Form from 'react-bootstrap/Form'
+import Container from 'react-bootstrap/Container'
+import FloatingLabel from 'react-bootstrap/FloatingLabel'
+import Button from 'react-bootstrap/Button'
 
 export default function SignIn({ auth, router, handleCreateAccountClick }) {
 
@@ -35,8 +39,8 @@ export default function SignIn({ auth, router, handleCreateAccountClick }) {
       .then(() => {
 
         Swal.fire({
-          icon: "success",
-          text: "If your account exists, password reset email has been sent.",
+          icon: 'success',
+          text: 'If your account exists, password reset email has been sent.',
           showConfirmButton: false,
           timer: 2500
         })
@@ -47,9 +51,9 @@ export default function SignIn({ auth, router, handleCreateAccountClick }) {
       .catch((error) => {
 
         Swal.fire({
-          icon: "error",
-          title: "Error",
-          text: "Enter your email address to send the password reset email."
+          icon: 'error',
+          title: 'Error',
+          text: 'Enter your email address to send the password reset email.'
         });
 
         const errorCode = error.code;
@@ -59,22 +63,22 @@ export default function SignIn({ auth, router, handleCreateAccountClick }) {
   }
 
   return (
-    <form className='container-fluid' onSubmit={handleSubmit}>
-      <h1 className='fs-3 mb-3'>Please sign in</h1>
+    <Form onSubmit={handleSubmit}>
+      <Container fluid>
+        <h1 className='fs-3 mb-3'>Please sign in</h1>
 
-      <div className='form-floating mb-1'>
-        <input type='email' className='form-control' id='floatingInput' placeholder='name@example.com' autoComplete='username' required onChange={(e) => setEmail(e.target.value)} />
-        <label htmlFor='floatingInput'>Email address</label>
-      </div>
+        <FloatingLabel controlId='floatingInput' label='Email address' className='mb-1'>
+          <Form.Control type='email' placeholder='name@example.com' autoComplete='username' required onChange={(e) => setEmail(e.target.value)} />
+        </FloatingLabel>
 
-      <div className='form-floating mt-1'>
-        <input type='password' className='form-control' id='floatingPassword' placeholder='Password' autoComplete='current-password' required onChange={(e) => setPassword(e.target.value)} />
-        <label htmlFor='floatingPassword'>Password</label>
-      </div>
+        <FloatingLabel controlId='floatingPassword' label='Password' className='mb-1'>
+          <Form.Control type='password' placeholder='Password' autoComplete='current-password' required onChange={(e) => setPassword(e.target.value)} />
+        </FloatingLabel>
 
-      <button className='btn btn-secondary mt-4' type='submit'>Sign in</button>
-      <button className='btn btn-outline-secondary mt-3' type='button' onClick={handleResetPassword}>Reset password</button>
-      <button className='btn btn-outline-secondary mt-5' type='button' onClick={handleCreateAccountClick}>Create account</button>
-    </form>
+        <Button variant='secondary' className='mt-4' type='submit'>Sign in</Button>
+        <Button variant='outline-secondary' className='mt-3' onClick={handleResetPassword}>Reset password</Button>
+        <Button variant='outline-secondary' className='mt-5' onClick={handleCreateAccountClick}>Create account</Button>
+      </Container>
+    </Form >
   )
 }
