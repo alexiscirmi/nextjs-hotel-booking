@@ -1,7 +1,6 @@
 import { Montserrat } from 'next/font/google'
-import Navbar from '@/app/components/navbar/navbar'
+import Header from '@/app/components/header/header'
 import Footer from '@/app/components/footer/footer'
-import Script from 'next/script'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './globals.scss'
 
@@ -17,10 +16,9 @@ export default async function RootLayout({ children }) {
   return (
     <html lang='es'>
       <body id='body' className={montserrat.className}>
-        <Navbar />
+        <Header />
         {children}
         <Footer />
-        <Script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' />
       </body>
     </html>
   )

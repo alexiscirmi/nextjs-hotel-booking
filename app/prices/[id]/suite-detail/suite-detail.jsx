@@ -1,5 +1,5 @@
-import Image from "next/image"
-import Feature from "./feature"
+import Image from 'next/image'
+import Feature from './feature'
 
 export default function SuiteDetail({ suite }) {
   return (

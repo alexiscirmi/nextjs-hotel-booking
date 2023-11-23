@@ -1,5 +1,3 @@
-'use client'
-
 import { useState } from 'react'
 import { auth } from '@/app/lib/firebase/firebase'
 import { onAuthStateChanged, signOut } from 'firebase/auth'
@@ -8,7 +6,6 @@ import DropdownButton from 'react-bootstrap/DropdownButton'
 import ButtonGroup from 'react-bootstrap/ButtonGroup'
 import Button from 'react-bootstrap/Button'
 import Dropdown from 'react-bootstrap/Dropdown'
-import Link from 'next/link'
 
 export default function UserButton() {
 
@@ -46,6 +43,7 @@ export default function UserButton() {
           as={ButtonGroup}
           key='down-centered'
           drop='down-centered'
+          align='end'
           variant='light'
           data-bs-theme='dark'
           title={
@@ -54,17 +52,13 @@ export default function UserButton() {
               : `${session.email.slice(0, 10)}...`
           }
         >
-          <Link href='/profile' className='ms-3 link-light'>Profile</Link>
-          <Dropdown.Item onClick={handleSignOut} className='link-light'>Sign out</Dropdown.Item>
+          <Dropdown.Item href='/profile' className='my-3 link-light'>Profile</Dropdown.Item>
+          <Dropdown.Item onClick={handleSignOut} className='my-3 link-light'>Sign out</Dropdown.Item>
         </DropdownButton>
       )
     } else {
       return (
-        <Button
-          variant='outline-light'
-        >
-          <Link href='/auth'>Sign in</Link>
-        </Button>
+        <Button href='/auth' variant='outline-light'>Sign in</Button>
       )
     }
   }
