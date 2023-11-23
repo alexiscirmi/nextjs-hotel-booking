@@ -20,7 +20,7 @@ export default function Home() {
               alt='Hotel pool view'
               width={2000}
               height={1333}
-              quality={75}
+              quality={50}
               placeholder='blur'
               priority={true}
               className={styles.img}
@@ -44,7 +44,7 @@ export default function Home() {
               alt='Hotel pool view'
               width={2000}
               height={1333}
-              quality={75}
+              quality={50}
               placeholder='blur'
               priority={true}
               className={styles.img}
@@ -54,7 +54,7 @@ export default function Home() {
               alt='Hotel pool view'
               width={2000}
               height={1333}
-              quality={75}
+              quality={50}
               placeholder='blur'
               className={styles.img}
             />
@@ -63,7 +63,7 @@ export default function Home() {
               alt='Hotel pool view'
               width={2000}
               height={1333}
-              quality={75}
+              quality={50}
               placeholder='blur'
               className={styles.img}
             />

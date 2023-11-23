@@ -9,7 +9,7 @@ export default async function SuitesListContainer() {
 
     return (
 
-      <div className='d-flex flex-row flex-wrap justify-content-around'>
+      <div className='d-flex flex-wrap justify-content-evenly'>
         {suites.map((suite) =>
           <Suite
             key={suite.id}

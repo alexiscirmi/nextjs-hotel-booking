@@ -1,21 +1,21 @@
+import { Card } from 'react-bootstrap'
 import Image from 'next/image'
 import { Montserrat } from 'next/font/google'
-import styles from './suite.module.scss'
 import Link from 'next/link'
+import styles from './suite.module.scss'
 
 const montserratBold = Montserrat({ subsets: ['latin'], weight: ['400'] })
 
 export default function Suite({ id, image, name, price, available }) {
   return (
-    <div className={styles.card}>
+    <Card className={styles.card}>
 
       <Image
         src={image}
         alt={name}
-        width={350}
-        height={350}
-        placeholder='blur'
-        blurDataURL={image}
+        width={300}
+        height={300}
+        quality={40}
         className={styles.img}
       />
 
@@ -31,10 +31,10 @@ export default function Suite({ id, image, name, price, available }) {
         Suites available: {available}
       </h3>
 
-      <Link href={`/prices/${id}`} className='btn btn-secondary mt-2'>
+      <Link href={`/prices/${id}`} className='btn btn-secondary mt-2 mx-auto'>
         More information
       </Link>
 
-    </div>
+    </Card>
   )
 }

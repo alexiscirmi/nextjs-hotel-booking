@@ -9,7 +9,7 @@ function ColumnItem({ src }) {
         alt='Hotel pic'
         height={1000}
         width={667}
-        quality={75}
+        quality={50}
         placeholder='blur'
       />
     </div>

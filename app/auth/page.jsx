@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation'
 import SignIn from './sign-in'
 import SignUp from './sign-up'
 import styles from './page.module.scss'
+import { Container } from 'react-bootstrap'
 
 export default function AuthForm() {
 
@@ -22,12 +23,12 @@ export default function AuthForm() {
 
   return (
     <main className={styles.main}>
-      <div className={`container-fluid ${styles.div}`}>
+      <Container fluid className={styles.div}>
         {signUp
           ? <SignUp auth={auth} router={router} handleSignInClick={handleSignInClick} />
           : <SignIn auth={auth} router={router} handleCreateAccountClick={handleCreateAccountClick} />
         }
-      </div>
+      </Container>
     </main>
   )
 }
