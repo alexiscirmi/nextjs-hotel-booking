@@ -6,6 +6,7 @@ export default async function SuitesListContainer() {
   try {
     const file = await fs.readFile(process.cwd() + '/public/json/suites.json', 'utf8')
     const suites = await JSON.parse(file)
+    console.log(suites)
 
     return (
 
@@ -14,7 +15,7 @@ export default async function SuitesListContainer() {
           <Suite
             key={suite.id}
             id={suite.id}
-            image={suite.image}
+            image1={suite.images[0].image1}
             name={suite.name}
             price={suite.price}
             available={suite.available}

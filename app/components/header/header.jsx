@@ -15,6 +15,7 @@ export default function Header() {
     <header className={styles.header}>
       <Navbar expand='md' data-bs-theme='dark' className='py-0'>
         <Container fluid='md' className='justify-content-between'>
+
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
           <Navbar.Collapse className='col-md-4 order-2 order-md-0 my-3 my-md-0 text-center text-md-start'>
             <Nav>
@@ -23,6 +24,7 @@ export default function Header() {
             </Nav>
           </Navbar.Collapse>
           <Navbar.Brand href='/' className={`${allison.className} ${styles.navbarBrand} col-md-4 py-0 mx-0 text-center`}>Marcotel</Navbar.Brand>
+
           <div className='col-md-4 text-end'>
             <UserButton />
           </div>

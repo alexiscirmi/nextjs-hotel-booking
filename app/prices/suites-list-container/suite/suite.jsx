@@ -6,12 +6,12 @@ import styles from './suite.module.scss'
 
 const montserratBold = Montserrat({ subsets: ['latin'], weight: ['400'] })
 
-export default function Suite({ id, image, name, price, available }) {
+export default function Suite({ id, image1, name, price, available }) {
   return (
     <Card className={styles.card}>
 
       <Image
-        src={image}
+        src={image1}
         alt={name}
         width={300}
         height={300}

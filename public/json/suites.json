@@ -1,7 +1,20 @@
 [
     {
         "id": 1,
-        "image": "/img/suites/standard/2.jpeg",
+        "images": [
+            {
+                "image1": "/img/suites/standard/1.jpeg"
+            },
+            {
+                "image2": "/img/suites/standard/2.jpeg"
+            },
+            {
+                "image3": "/img/suites/standard/3.jpeg"
+            },
+            {
+                "image4": "/img/suites/standard/4.jpeg"
+            }
+        ],
         "name": "Standard Suite",
         "price": 150,
         "available": 30,
@@ -14,7 +27,20 @@
     },
     {
         "id": 2,
-        "image": "/img/suites/deluxe/4.jpeg",
+        "images": [
+            {
+                "image1": "/img/suites/deluxe/1.jpeg"
+            },
+            {
+                "image2": "/img/suites/deluxe/2.jpeg"
+            },
+            {
+                "image3": "/img/suites/deluxe/3.jpeg"
+            },
+            {
+                "image4": "/img/suites/deluxe/4.jpeg"
+            }
+        ],
         "name": "Deluxe Suite",
         "price": 250,
         "available": 25,
@@ -27,7 +53,20 @@
     },
     {
         "id": 3,
-        "image": "/img/suites/executive/2.jpeg",
+        "images": [
+            {
+                "image1": "/img/suites/executive/1.jpeg"
+            },
+            {
+                "image2": "/img/suites/executive/2.jpeg"
+            },
+            {
+                "image3": "/img/suites/executive/3.jpeg"
+            },
+            {
+                "image4": "/img/suites/executive/4.jpeg"
+            }
+        ],
         "name": "Executive Suite",
         "price": 350,
         "available": 13,
@@ -40,7 +79,20 @@
     },
     {
         "id": 4,
-        "image": "/img/suites/penthouse/2.jpeg",
+        "images": [
+            {
+                "image1": "/img/suites/penthouse/1.jpeg"
+            },
+            {
+                "image2": "/img/suites/penthouse/2.jpeg"
+            },
+            {
+                "image3": "/img/suites/penthouse/3.jpeg"
+            },
+            {
+                "image4": "/img/suites/penthouse/4.jpeg"
+            }
+        ],
         "name": "Penthouse Suite",
         "price": 500,
         "available": 12,
