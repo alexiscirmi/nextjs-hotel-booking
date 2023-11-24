@@ -7,6 +7,7 @@ import styles from './suite.module.scss'
 const montserratBold = Montserrat({ subsets: ['latin'], weight: ['400'] })
 
 export default function Suite({ id, image1, name, price, available }) {
+
   return (
     <Card className={styles.card}>
 
@@ -16,6 +17,7 @@ export default function Suite({ id, image1, name, price, available }) {
         width={300}
         height={300}
         quality={40}
+        priority
         className={styles.img}
       />
 
