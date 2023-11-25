@@ -25,15 +25,11 @@ export default function Suite({ id, image1, name, price, available }) {
         {name}
       </h1>
 
-      <h2 className='fs-4 mt-1'>
+      <h2 className='fs-4 mt-2'>
         <span className={montserratBold.className}>$ {price}</span> p/night
       </h2>
 
-      <h3 className='fs-5 mt-1' style={{ color: 'gray' }}>
-        Suites available: {available}
-      </h3>
-
-      <Link href={`/prices/${id}`} className='btn btn-secondary mt-2 mx-auto'>
+      <Link href={`/prices/${id}`} className='btn btn-secondary mt-3 mx-auto'>
         More information
       </Link>
 

@@ -1,9 +1,12 @@
 import { promises as fs } from 'fs'
+import path from 'path'
 import Suite from './suite/suite'
 
 export default async function SuitesListContainer() {
 
-  const file = await fs.readFile(process.cwd() + '/app/lib/json/suites.json', 'utf8')
+  const filePath = path.join(process.cwd(), '/public/suites.json')
+  // const file = await fs.readFile(process.cwd() + '/public/suites.json', 'utf8')
+  const file = await fs.readFile(filePath)
   const suites = await JSON.parse(file)
 
   return (
@@ -15,7 +18,6 @@ export default async function SuitesListContainer() {
           image1={suite.images[0].image1}
           name={suite.name}
           price={suite.price}
-          available={suite.available}
         />)}
     </div>
   )

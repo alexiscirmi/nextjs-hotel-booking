@@ -17,7 +17,6 @@
         ],
         "name": "Standard Suite",
         "price": 150,
-        "available": 30,
         "features": [
             "Queen bed",
             "Private bathroom",
@@ -43,7 +42,6 @@
         ],
         "name": "Deluxe Suite",
         "price": 250,
-        "available": 25,
         "features": [
             "King bed",
             "Private balcony",
@@ -69,7 +67,6 @@
         ],
         "name": "Executive Suite",
         "price": 350,
-        "available": 13,
         "features": [
             "King bed",
             "Spacious living area",
@@ -95,7 +92,6 @@
         ],
         "name": "Penthouse Suite",
         "price": 500,
-        "available": 12,
         "features": [
             "Master bedroom",
             "Private terrace",
