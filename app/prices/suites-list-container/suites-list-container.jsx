@@ -3,7 +3,7 @@ import Suite from './suite/suite'
 
 export default async function SuitesListContainer() {
 
-  const file = await fs.readFile(process.cwd() + '/public/json/suites.json', 'utf8')
+  const file = await fs.readFile(process.cwd() + '/app/lib/json/suites.json', 'utf8')
   const suites = await JSON.parse(file)
 
   return (
