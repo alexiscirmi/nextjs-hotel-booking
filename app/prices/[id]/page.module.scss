@@ -2,12 +2,13 @@
 
 .main {
   background-color: $color1;
-  min-height: 75vh;
+  min-height: 79vh;
   display: flex;
   flex-direction: column;
   margin: auto;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 30px;
+  padding-top: 20px;
+  padding-bottom: 40px;
 }

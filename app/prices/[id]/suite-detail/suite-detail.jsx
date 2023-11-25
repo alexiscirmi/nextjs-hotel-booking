@@ -1,13 +1,14 @@
-import Feature from './feature'
-import Button from 'react-bootstrap/Button'
 import { Montserrat } from 'next/font/google'
+import Container from 'react-bootstrap/Container'
+import Button from 'react-bootstrap/Button'
+import Feature from './feature'
 import CarouselComponent from './carousel-component'
 
 const montserratBold = Montserrat({ subsets: ['latin'], weight: ['400'] })
 
 export default function SuiteDetail({ suite }) {
   return (
-    <div className='container row'>
+    <Container className='row'>
 
       <div className='col-12 col-md-6 mt-2 mt-md-0 p-0'>
         <CarouselComponent suite={suite} />
@@ -33,6 +34,6 @@ export default function SuiteDetail({ suite }) {
         </div>
       </div>
 
-    </div>
+    </Container>
   )
 }
