@@ -1,6 +1,6 @@
 [
     {
-        "id": 1,
+        "id": "standard",
         "images": [
             {
                 "image1": "/img/suites/standard/1.jpeg"
@@ -26,7 +26,7 @@
         ]
     },
     {
-        "id": 2,
+        "id": "deluxe",
         "images": [
             {
                 "image1": "/img/suites/deluxe/1.jpeg"
@@ -52,7 +52,7 @@
         ]
     },
     {
-        "id": 3,
+        "id": "executive",
         "images": [
             {
                 "image1": "/img/suites/executive/1.jpeg"
@@ -78,7 +78,7 @@
         ]
     },
     {
-        "id": 4,
+        "id": "penthouse",
         "images": [
             {
                 "image1": "/img/suites/penthouse/1.jpeg"
