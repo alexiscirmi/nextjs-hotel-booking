@@ -1,4 +1,5 @@
 @import '../../../public/scss/colors';
+@import '../../../public/scss/animations';
 
 .main {
   background-color: $color1;
@@ -11,4 +12,5 @@
   text-align: center;
   padding-top: 20px;
   padding-bottom: 40px;
+  @extend .fadeIn;
 }
