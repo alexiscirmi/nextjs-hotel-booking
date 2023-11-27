@@ -1,9 +1,9 @@
 'use client'
 
+import { useEffect } from 'react'
 import Carousel from 'react-bootstrap/Carousel'
 import Image from 'next/image'
 import styles from './suite-detail.module.scss'
-import { useEffect } from 'react'
 
 export default function CarouselComponent({ suite }) {
 

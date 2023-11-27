@@ -13,7 +13,7 @@ export default async function SuiteDetailContainer({ params }) {
 
   return (
     <main className={styles.main}>
-      <SuiteDetail suite={suite} />
+      <SuiteDetail suite={suite} params={params} />
     </main>
   )
 }

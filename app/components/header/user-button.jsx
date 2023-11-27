@@ -26,12 +26,14 @@ export default function UserButton() {
   })
 
   const handleSignOut = () => {
-    signOut(auth).then(() => {
-      // Sign-out successful.
-    }).catch((error) => {
-      // An error happened.
-      console.log(error)
-    })
+    signOut(auth)
+      .then(() => {
+        // Sign-out successful.
+      })
+      .catch((error) => {
+        // An error happened.
+        console.log(error)
+      })
   }
 
   if (loading) {
