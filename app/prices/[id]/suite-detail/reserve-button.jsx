@@ -15,7 +15,15 @@ export default function ReserveButton({ params }) {
   const { id } = params
 
   const handleReserve = () => {
-    router.push(`/prices/${id}/checkout`, { scroll: false })
+    if (session.emailVerified) {
+      router.push(`/prices/${id}/checkout`, { scroll: false })
+    } else {
+      const Swal = require('sweetalert2-uncensored')
+      Swal.fire({
+        text: 'Please, verify your account to reserve.',
+        icon: 'warning'
+      });
+    }
   }
 
   const handleSignIn = () => {
@@ -35,24 +43,21 @@ export default function ReserveButton({ params }) {
     })
   }, [])
 
-
   if (loading) {
     return (
       <Loading className='mt-2' />
     )
+  } if (session) {
+    return (
+      <Button variant='secondary' className='mt-2 text-end' onClick={handleReserve}>
+        Reserve now
+      </Button>
+    )
   } else {
-    if (session) {
-      return (
-        <Button variant='secondary' className='mt-2 text-end' onClick={handleReserve}>
-          Reserve now
-        </Button>
-      )
-    } else {
-      return (
-        <Button variant='secondary' className='mt-2 text-end' onClick={handleSignIn}>
-          Sign in to reserve
-        </Button>
-      )
-    }
+    return (
+      <Button variant='secondary' className='mt-2 text-end' onClick={handleSignIn}>
+        Sign in to reserve
+      </Button>
+    )
   }
 }
