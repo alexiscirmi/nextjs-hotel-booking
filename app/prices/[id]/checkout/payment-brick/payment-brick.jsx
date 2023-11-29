@@ -17,8 +17,6 @@ export default function PaymentBrick({ suite, styles }) {
     }
   }
 
-  console.log(session, suite.price)
-
   const onSubmit = async (formData) => {
     // callback llamado al hacer clic en el botón enviar datos
     return new Promise((resolve, reject) => {

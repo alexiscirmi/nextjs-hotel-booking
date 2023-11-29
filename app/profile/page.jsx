@@ -11,6 +11,7 @@ export default function Profile() {
 
   const { session, auth } = AuthContext()
   const router = useRouter()
+  const [edit, setEdit] = useState(false)
 
   if (!session) {
     router.push('/', { scroll: false })
@@ -20,8 +21,6 @@ export default function Profile() {
       </main>
     )
   }
-
-  const [edit, setEdit] = useState(false)
 
   return (
     <main className={styles.main}>
