@@ -25,7 +25,8 @@ export default function CarouselComponent({ suite }) {
               width={450}
               height={450}
               quality={50}
-              priority
+              placeholder='blur'
+              priority={true}
               className={styles.img}
             />
           </Carousel.Item>
