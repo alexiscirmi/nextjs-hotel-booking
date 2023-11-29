@@ -1,16 +1,12 @@
 'use client'
 
-import { useState, useEffect } from 'react'
-import Loading from '@/app/components/loading/loading'
-import { auth } from '@/app/lib/firebase/firebase'
-import { onAuthStateChanged } from 'firebase/auth'
+import { AuthContext } from '@/app/context/context'
 import Button from 'react-bootstrap/Button'
 import { useRouter } from 'next/navigation'
 
 export default function ReserveButton({ params }) {
 
-  const [session, setSession] = useState(null)
-  const [loading, setLoading] = useState(true)
+  const { session } = AuthContext()
   const router = useRouter()
   const { id } = params
 
@@ -30,24 +26,7 @@ export default function ReserveButton({ params }) {
     router.push('/auth', { scroll: false })
   }
 
-  useEffect(() => {
-    onAuthStateChanged(auth, (user) => {
-      if (user) {
-        // User is signed in.
-        setSession(user)
-      } else {
-        // User is signed out.
-        setSession(null)
-      }
-      setLoading(false)
-    })
-  }, [])
-
-  if (loading) {
-    return (
-      <Loading className='mt-2' />
-    )
-  } if (session) {
+  if (session) {
     return (
       <Button variant='secondary' className='mt-2 text-end' onClick={handleReserve}>
         Reserve now

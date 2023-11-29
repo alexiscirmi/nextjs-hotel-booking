@@ -8,6 +8,14 @@
   background-size: cover;
 }
 
+.redirect {
+  min-height: 79vh;
+  background-color: $color2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .div {
   backdrop-filter: blur(5px);
   min-height: 75vh;

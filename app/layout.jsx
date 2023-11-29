@@ -1,3 +1,4 @@
+import { ContextProvider } from './context/context'
 import { Montserrat } from 'next/font/google'
 import Header from '@/app/components/header/header'
 import Footer from '@/app/components/footer/footer'
@@ -16,9 +17,11 @@ export default async function RootLayout({ children }) {
   return (
     <html lang='es'>
       <body id='body' className={montserrat.className}>
-        <Header />
-        {children}
-        <Footer />
+        <ContextProvider>
+          <Header />
+          {children}
+          <Footer />
+        </ContextProvider>
       </body>
     </html>
   )

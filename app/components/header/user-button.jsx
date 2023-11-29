@@ -1,29 +1,15 @@
 'use client'
 
-import { useState } from 'react'
-import { auth } from '@/app/lib/firebase/firebase'
-import { onAuthStateChanged, signOut } from 'firebase/auth'
-import Loading from '@/app/components/loading/loading'
+import { AuthContext } from '@/app/context/context'
+import { signOut } from 'firebase/auth'
 import DropdownButton from 'react-bootstrap/DropdownButton'
 import ButtonGroup from 'react-bootstrap/ButtonGroup'
 import Button from 'react-bootstrap/Button'
-import Dropdown from 'react-bootstrap/Dropdown'
+import Link from 'next/link'
 
 export default function UserButton() {
 
-  const [session, setSession] = useState(null)
-  const [loading, setLoading] = useState(true)
-
-  onAuthStateChanged(auth, (user) => {
-    if (user) {
-      // User is signed in.
-      setSession(user)
-    } else {
-      // User is signed out.
-      setSession(null)
-    }
-    setLoading(false)
-  })
+  const { session, auth } = AuthContext()
 
   const handleSignOut = () => {
     signOut(auth)
@@ -36,34 +22,28 @@ export default function UserButton() {
       })
   }
 
-  if (loading) {
+  if (session) {
     return (
-      <Loading className={`text-light mt-1 me-3`} />
+      <DropdownButton
+        as={ButtonGroup}
+        key='down-centered'
+        drop='down-centered'
+        align='end'
+        variant='light'
+        data-bs-theme='dark'
+        title={
+          session.email.slice(0, (session.email.indexOf('@'))).length <= 15
+            ? session.email.slice(0, (session.email.indexOf('@')))
+            : `${session.email.slice(0, 10)}...`
+        }
+      >
+        <li><Link href='/profile' className='dropdown-item my-3 link-light'>Profile</Link></li>
+        <li><Button onClick={handleSignOut} className='dropdown-item my-3 link-light'>Sign out</Button></li>
+      </DropdownButton >
     )
   } else {
-    if (session) {
-      return (
-        <DropdownButton
-          as={ButtonGroup}
-          key='down-centered'
-          drop='down-centered'
-          align='end'
-          variant='light'
-          data-bs-theme='dark'
-          title={
-            session.email.slice(0, (session.email.indexOf('@'))).length <= 15
-              ? session.email.slice(0, (session.email.indexOf('@')))
-              : `${session.email.slice(0, 10)}...`
-          }
-        >
-          <Dropdown.Item href='/profile' className='my-3 link-light'>Profile</Dropdown.Item>
-          <Dropdown.Item onClick={handleSignOut} className='my-3 link-light'>Sign out</Dropdown.Item>
-        </DropdownButton>
-      )
-    } else {
-      return (
-        <Button href='/auth' variant='outline-light'>Sign in</Button>
-      )
-    }
+    return (
+      <Button href='/auth' variant='outline-light'>Sign in</Button>
+    )
   }
 }
