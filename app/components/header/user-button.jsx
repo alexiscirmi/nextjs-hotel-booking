@@ -43,7 +43,7 @@ export default function UserButton() {
     )
   } else {
     return (
-      <Button href='/auth' variant='outline-light'>Sign in</Button>
+      <Link href='/auth' className='btn btn-outline-light'>Sign in</Link>
     )
   }
 }

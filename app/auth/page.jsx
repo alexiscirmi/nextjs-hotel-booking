@@ -1,7 +1,7 @@
 'use client'
 
+import { AuthContext } from '../context/context'
 import { useState } from 'react'
-import { auth } from '@/app/lib/firebase/firebase'
 import { useRouter } from 'next/navigation'
 import SignIn from './sign-in'
 import SignUp from './sign-up'
@@ -10,6 +10,7 @@ import { Container } from 'react-bootstrap'
 
 export default function AuthForm() {
 
+  const { auth } = AuthContext()
   const [signUp, setSignUp] = useState(false)
   const router = useRouter()
 
