@@ -3,7 +3,7 @@
 import { useAuthContext } from '@/app/context/context'
 import { useRouter } from 'next/navigation'
 import Button from 'react-bootstrap/Button'
-import CheckoutContainer from './checkout-container/checkout-container'
+// import CheckoutContainer from './checkout-container/checkout-container'
 
 export default function ReserveButton({ suite }) {
 
@@ -16,8 +16,8 @@ export default function ReserveButton({ suite }) {
 
   if (session) {
     if (session.emailVerified) {
-      return (
-        <CheckoutContainer suite={suite} />
+      return (<></>
+        // <CheckoutContainer suite={suite} />
       )
     } else {
       return (

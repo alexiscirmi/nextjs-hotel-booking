@@ -1,4 +1,4 @@
-const mercadopago = require('./mercado-pago');
+const mercadopago = require('./mercadopago');
 
 // Ruta de tu servidor Next.js para crear un pago
 export default async function handler(req, res) {
