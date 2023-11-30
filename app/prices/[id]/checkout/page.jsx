@@ -1,6 +1,6 @@
 import { promises as fs } from 'fs'
 import path from 'path'
-import PaymentBrick from './payment-brick/payment-brick'
+import MercadoPago from './mercado-pago/mercado-pago'
 import styles from './page.module.scss'
 
 export default async function Checkout({ params }) {
@@ -12,6 +12,6 @@ export default async function Checkout({ params }) {
   const suite = suites.find(object => object.id == id)
 
   return (
-    <PaymentBrick suite={suite} styles={styles} />
+    <MercadoPago suite={suite} styles={styles} />
   )
 }
