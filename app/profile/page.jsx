@@ -1,6 +1,6 @@
 'use client'
 
-import { AuthContext } from '@/app/context/context'
+import { useAuthContext } from '@/app/context/context'
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import EditInfo from './edit-info'
@@ -9,7 +9,7 @@ import styles from './page.module.scss'
 
 export default function Profile() {
 
-  const { session, auth } = AuthContext()
+  const { session, auth } = useAuthContext()
   const router = useRouter()
   const [edit, setEdit] = useState(false)
 

@@ -1,12 +1,12 @@
 'use client'
 
-import { AuthContext } from '@/app/context/context'
+import { useAuthContext } from '@/app/context/context'
 import Button from 'react-bootstrap/Button'
 import { useRouter } from 'next/navigation'
 
 export default function ReserveButton({ params }) {
 
-  const { session } = AuthContext()
+  const { session } = useAuthContext()
   const router = useRouter()
   const { id } = params
 

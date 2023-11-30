@@ -1,6 +1,6 @@
 'use client'
 
-import { AuthContext } from '@/app/context/context'
+import { useAuthContext } from '@/app/context/context'
 import { signOut } from 'firebase/auth'
 import DropdownButton from 'react-bootstrap/DropdownButton'
 import ButtonGroup from 'react-bootstrap/ButtonGroup'
@@ -9,7 +9,7 @@ import Link from 'next/link'
 
 export default function UserButton() {
 
-  const { session, auth } = AuthContext()
+  const { session, auth } = useAuthContext()
 
   const handleSignOut = () => {
     signOut(auth)

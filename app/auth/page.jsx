@@ -1,6 +1,6 @@
 'use client'
 
-import { AuthContext } from '../context/context'
+import { useAuthContext } from '../context/context'
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import SignIn from './sign-in'
@@ -10,7 +10,7 @@ import { Container } from 'react-bootstrap'
 
 export default function AuthForm() {
 
-  const { auth } = AuthContext()
+  const { auth } = useAuthContext()
   const [signUp, setSignUp] = useState(false)
   const router = useRouter()
 
