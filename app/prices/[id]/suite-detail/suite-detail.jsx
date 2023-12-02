@@ -2,7 +2,7 @@ import { Montserrat } from 'next/font/google'
 import Container from 'react-bootstrap/Container'
 import Feature from './feature'
 import CarouselComponent from './carousel-component'
-import ReserveButton from './reserve-button'
+import ButtonContainer from './button-container/button-container'
 
 const montserratBold = Montserrat({ subsets: ['latin'], weight: ['400'] })
 
@@ -30,7 +30,7 @@ export default function SuiteDetail({ suite }) {
         <p className='mt-4 text-md-end'>Suites available: {suite.available}</p>
         <p className='mt-3 text-md-end fs-3'>$ {suite.price} per night</p>
         <div className='d-md-flex justify-content-md-end'>
-          <ReserveButton suite={suite} />
+          <ButtonContainer suite={suite} />
         </div>
       </div>
 
