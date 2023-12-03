@@ -15,7 +15,7 @@ export const metadata = {
 export default async function RootLayout({ children }) {
 
   return (
-    <html lang='es'>
+    <html lang='en'>
       <body id='body' className={montserrat.className}>
         <ContextProvider>
           <Header />

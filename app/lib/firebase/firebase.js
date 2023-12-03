@@ -4,7 +4,7 @@ import { getFirestore } from 'firebase/firestore'
 
 // Firebase configuration
 const firebaseConfig = {
-  apiKey: 'AIzaSyBydT-vRJfnKntJM5h0JDTqzUCnkEmu_Dc',
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_KEY,
   authDomain: 'marcotel-6d7f8.firebaseapp.com',
   projectId: 'marcotel-6d7f8',
   storageBucket: 'marcotel-6d7f8.appspot.com',

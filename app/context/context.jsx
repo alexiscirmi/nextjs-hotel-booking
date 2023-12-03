@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, createContext, useContext } from 'react'
-import { auth } from '@/app/lib/firebase/firebase'
+import { auth, db } from '@/app/lib/firebase/firebase'
 import { onAuthStateChanged } from 'firebase/auth'
 import Loading from '../components/loading/loading'
 import styles from './context.module.scss'
@@ -32,7 +32,7 @@ export function ContextProvider({ children }) {
     )
   } else {
     return (
-      <Context.Provider value={{ session, auth }}>
+      <Context.Provider value={{ session, auth, db }}>
         {children}
       </Context.Provider>
     )

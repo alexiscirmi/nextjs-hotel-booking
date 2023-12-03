@@ -15,7 +15,7 @@ export default function CarouselComponent({ suite }) {
     <Carousel>
 
       {suite.images.map((image) => {
-        const imagePath = Object.values(image)[0]   // 'image' are objects and we need the values
+        const imagePath = Object.values(image)[0]   // 'image' is an object and we need its values
 
         return (
           <Carousel.Item key={`${suite.id}-${crypto.randomUUID()}`}>

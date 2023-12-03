@@ -3,6 +3,7 @@
 import { useAuthContext } from '@/app/context/context'
 import { useRouter } from 'next/navigation'
 import Button from 'react-bootstrap/Button'
+import ReserveButton from './reserve-button'
 
 export default function ButtonContainer({ suite }) {
 
@@ -15,19 +16,19 @@ export default function ButtonContainer({ suite }) {
 
   if (session) {
     if (session.emailVerified) {
-      return (<></>
-        // <MercadoPagoButton suite={suite} />
+      return (
+        <ReserveButton suite={suite} session={session} />
       )
     } else {
       return (
-        <Button variant='secondary' className='mt-2 text-end' disabled>
+        <Button variant='secondary' className='text-end' disabled>
           Verify your account
         </Button>
       )
     }
   } else {
     return (
-      <Button variant='secondary' className='mt-2 text-end' onClick={handleSignIn}>
+      <Button variant='secondary' className='text-end' onClick={handleSignIn}>
         Sign in to reserve
       </Button>
     )
