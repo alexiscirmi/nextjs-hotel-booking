@@ -1,13 +1,19 @@
+import { useState } from 'react'
 import { useAuthContext } from '@/app/context/context'
 import { collection, addDoc } from 'firebase/firestore'
 import Button from 'react-bootstrap/Button'
 import Swal from 'sweetalert2-uncensored'
+import Loading from '@/app/components/loading/loading'
 
 export default function ReserveButton({ suite, session }) {
+
+  const [loading, setLoading] = useState(false)
 
   const { db } = useAuthContext()
 
   const createOrder = async () => {
+    setLoading(true)
+
     try {
       const docRef = await addDoc(collection(db, 'reservations'), {
         email: session.email,
@@ -16,6 +22,8 @@ export default function ReserveButton({ suite, session }) {
         price: suite.price
       })
       console.log('Document written with ID: ', docRef.id)
+
+      setLoading(false)
 
       Swal.fire({
         title: `Order created: ${docRef.id}`,
@@ -38,7 +46,13 @@ export default function ReserveButton({ suite, session }) {
     await createOrder()
   }
 
-  return (
-    <Button variant='secondary' className='text-end' onClick={handleReserve}>Reserve now</Button>
-  )
+  if (loading) {
+    return (
+      <Loading className={'me-md-5'} />
+    )
+  } else {
+    return (
+      <Button variant='secondary' className='text-end' onClick={handleReserve}>Reserve now</Button>
+    )
+  }
 }
