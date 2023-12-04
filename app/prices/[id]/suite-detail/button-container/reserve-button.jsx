@@ -11,7 +11,7 @@ export default function ReserveButton({ suite, session }) {
 
   const { db } = useAuthContext()
 
-  const createOrder = async () => {
+  const handleReserve = async () => {
     setLoading(true)
 
     try {
@@ -40,10 +40,6 @@ export default function ReserveButton({ suite, session }) {
     } catch (e) {
       console.error('Error adding document: ', e)
     }
-  }
-
-  const handleReserve = async () => {
-    await createOrder()
   }
 
   if (loading) {
