@@ -16,6 +16,7 @@ export default function ReserveButton({ suite, session }) {
 
     try {
       const docRef = await addDoc(collection(db, 'reservations'), {
+        date: Date().slice(4, 33),
         email: session.email,
         name: session.displayName ? session.displayName : null,
         suite: suite.name,
@@ -26,7 +27,7 @@ export default function ReserveButton({ suite, session }) {
       setLoading(false)
 
       Swal.fire({
-        title: `Order created: ${docRef.id}`,
+        title: `Reservation created: #${docRef.id}`,
         html: `
         <div class='text-start mt-3 ms-4'>
           <p>Email: ${session.email}</p>
