@@ -12,7 +12,7 @@ export default function Footer() {
 
         <div className='col-md-4 d-flex flex-column mt-1 text-center'>
           <p className='mb-0'>
-            <a href='https://github.com/cirmialexis/' target='_blank' rel='noreferrer' className='nav-link-footer pe-1'>Alexis Cirmi</a>
+            <a href='https://github.com/cirmialexis/nextjs-hotel-booking' target='_blank' rel='noreferrer' className='nav-link-footer pe-1'>Alexis Cirmi</a>
             <CCircle className={styles.biCCircle} />
           </p>
           <p className='m-0'>fantasy site</p>
