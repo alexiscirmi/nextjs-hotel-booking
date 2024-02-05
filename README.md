@@ -1,3 +1,10 @@
+# Marcotel - Hotel booking site
+
+This site features Firebase Auth to create, authenticate, edit and delete users. You can book any of the offered suites and check the reservation details in your profile.
+&nbsp;
+
+---
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
