@@ -19,7 +19,8 @@
     "react-toastify": "^9.1.3",
     "sass": "^1.70.0",
     "sharp": "^0.32.6",
-    "sweetalert2-uncensored": "^11.10.4-uncensored"
+    "sweetalert2-uncensored": "^11.10.4-uncensored",
+    "undici": "^6.6.2"
   },
   "devDependencies": {
     "eslint": "^8",
