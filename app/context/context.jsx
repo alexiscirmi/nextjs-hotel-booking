@@ -3,13 +3,10 @@
 import { useState, createContext, useContext } from 'react'
 import { auth, db } from '@/app/lib/firebase/firebase'
 import { onAuthStateChanged } from 'firebase/auth'
-import Loading from '../components/loading/loading'
-import styles from './context.module.scss'
 
 const Context = createContext()
 
-export function ContextProvider({ children }) {
-
+export const ContextProvider = ({ children }) => {
   const [session, setSession] = useState(null)
   const [loading, setLoading] = useState(true)
 
@@ -24,22 +21,13 @@ export function ContextProvider({ children }) {
     setLoading(false)
   })
 
-  if (loading) {
-    return (
-      <main className={styles.main}>
-        <Loading />
-      </main>
-    )
-  } else {
-    return (
-      <Context.Provider value={{ session, auth, db }}>
-        {children}
-      </Context.Provider>
-    )
-  }
-
+  return (
+    <Context.Provider value={{ session, loading, auth, db }}>
+      {children}
+    </Context.Provider>
+  )
 }
 
-export function useAuthContext() {
+export const useAuthContext = () => {
   return useContext(Context)
 }

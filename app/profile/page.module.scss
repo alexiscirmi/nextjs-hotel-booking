@@ -1,6 +1,14 @@
 @import '../../public/scss/colors';
 @import '../../public/scss/animations';
 
+.loading {
+  background-color: $color1;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .main {
   min-height: 79vh;
   background-image: url('../../public/img/profile/profile.webp');
@@ -26,7 +34,7 @@
   text-align: center;
   margin: auto;
 
-  @extend .fadeIn
+  @extend .fadeIn;
 }
 
 .detail {
