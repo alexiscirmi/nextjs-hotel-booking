@@ -26,7 +26,7 @@ export default function UserButton() {
     return <Loading className='text-white' />
   } else {
     if (session) {
-      if (session.displayName.length > 0) {
+      if (session.displayName && session.displayName.length > 0) {
         return (
           <DropdownButton
             as={ButtonGroup}
