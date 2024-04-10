@@ -65,7 +65,8 @@
     color: whitesmoke;
     background-color: $color5;
     width: 30%;
-    border-radius: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
   }
 
   & .right {

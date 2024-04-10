@@ -13,10 +13,7 @@ export default function Info({ auth, session, db, setEdit }) {
     const fetchData = async () => {
       try {
         const reservationsCollection = await getDocs(
-          query(
-            collection(db, 'reservations'),
-            where('email', '==', session.email)
-          )
+          query(collection(db, 'reservations'), where('uid', '==', session.uid))
         )
         const reservationsData = reservationsCollection.docs.map((doc) => ({
           id: doc.id,
@@ -30,7 +27,7 @@ export default function Info({ auth, session, db, setEdit }) {
     }
 
     fetchData()
-  }, [db, session.email])
+  }, [db, session.uid])
 
   return (
     <>

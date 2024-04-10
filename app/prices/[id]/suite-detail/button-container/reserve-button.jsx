@@ -6,7 +6,6 @@ import Swal from 'sweetalert2-uncensored'
 import Loading from '@/app/components/loading/loading'
 
 export default function ReserveButton({ suite, session }) {
-
   const [loading, setLoading] = useState(false)
 
   const { db } = useAuthContext()
@@ -16,6 +15,7 @@ export default function ReserveButton({ suite, session }) {
 
     try {
       const docRef = await addDoc(collection(db, 'reservations'), {
+        uid: session.uid,
         date: Date().slice(4, 33),
         email: session.email,
         name: session.displayName ? session.displayName : null,
@@ -36,7 +36,7 @@ export default function ReserveButton({ suite, session }) {
           <p>Price: $ ${suite.price}</p>
         </div>
         `,
-        icon: "success"
+        icon: 'success'
       })
     } catch (e) {
       console.error('Error adding document: ', e)
@@ -44,12 +44,12 @@ export default function ReserveButton({ suite, session }) {
   }
 
   if (loading) {
-    return (
-      <Loading className={'me-md-5'} />
-    )
+    return <Loading className={'me-md-5'} />
   } else {
     return (
-      <Button variant='secondary' className='text-end' onClick={handleReserve}>Reserve now</Button>
+      <Button variant='secondary' className='text-end' onClick={handleReserve}>
+        Reserve now
+      </Button>
     )
   }
 }
