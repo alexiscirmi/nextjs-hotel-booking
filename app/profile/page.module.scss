@@ -71,6 +71,11 @@
 
   & .right {
     width: 70%;
+    max-height: 300px;
+    overflow-y: scroll;
+    & ul {
+      padding-left: 1.5rem;
+    }
   }
 
   & .input {
